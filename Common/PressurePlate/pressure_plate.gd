@@ -7,4 +7,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		emit_signal("stepped_on")
+		stepped_on.emit()

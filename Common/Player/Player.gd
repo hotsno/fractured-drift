@@ -98,7 +98,7 @@ func _on_coin_coin_collected():
 	await get_tree().create_timer(10.0).timeout
 	speed_multiplier = 1.0
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("left_click"):
 		if not picked_object:
 			_pick_object()
