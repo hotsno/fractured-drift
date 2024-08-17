@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=6 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
+[ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kulbv"]
 size = Vector3(10, 0.5, 10)
@@ -10,25 +11,13 @@ size = Vector3(10, 0.5, 10)
 
 [node name="Level1" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.92235, 0, 0, 0, 7.72394, 0, 0, 0, 0.955025, 0.143272, -1.47959, 1.03242)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60614, -0.122986, 1.42246)
-use_collision = true
-collision_layer = 6
-size = Vector3(6.61267, 0.754028, 13.3214)
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.92235, 0, 0, 0, 8.41421, 0, 0, 0, 0.955025, 0.143272, -1.57533, -13.9556)
-mesh = SubResource("BoxMesh_kulbv")
-
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.00437468, -0.714137, -0.699992, -0.0689102, -0.69855, 0.712236, -0.997613, 0.0451206, -0.0522672, 0.573872, 2.01453, 2.86283)
 shadow_enabled = true
+shadow_opacity = 0.74
+shadow_blur = 0.394
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(0.657768, 0, 0, 0, 0.674481, 0, 0, 0, 1, 12.0696, 0.86932, 2.12184)
@@ -41,6 +30,24 @@ transform = Transform3D(0.808343, 0.0359373, -0.0225676, -0.0294376, 1.01663, -0
 
 [node name="TerrainWall4" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(0.633417, 0.0308666, 0.621131, 0.00350232, 0.873188, -0.0621469, -0.503325, 0.0449206, 0.781239, 13.7448, 1.43306, -11.1404)
+
+[node name="TerrainWall5" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(-0.184922, 0.11488, 0.955653, -1.86265e-09, 1.30452, -0.0913799, -0.631239, -0.0336543, -0.27996, -12.4401, -2.20708, -5.07699)
+
+[node name="TerrainWall6" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(-0.797477, 0.067687, 0.149752, 0.0688008, 0.870808, 0.0455167, -0.117743, 0.0503936, -0.987675, -12.8538, -0.0100672, -23.0038)
+
+[node name="TerrainWall9" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(0.786212, 0.067687, 0.222893, -0.0504578, 0.870808, -0.0735784, -0.184097, 0.0503937, 0.972062, 9.71974, 1.3008, -19.5208)
+
+[node name="TerrainWall10" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(1.04026, 0.0969717, 0.281455, -0.0667624, 1.24756, -0.0929102, -0.243584, 0.0721964, 1.22746, 14.0969, 0.316037, 6.91862)
+
+[node name="TerrainWall7" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(-0.705692, 0.891797, 0.0279015, 0.395661, 1.58955, 0.0625198, 0.00408822, 0.10066, -1.23446, -13.3214, 0.549568, -16.1616)
+
+[node name="TerrainWall8" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(-0.732806, 0.901778, 0.194315, 0.323667, 2.13039, 0.0504514, -0.113143, 0.253729, -1.11422, -14.0076, -3.63114, 2.80333)
 
 [node name="Player" parent="." instance=ExtResource("2_xfy54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 0.935791, 4.16866)
@@ -103,3 +110,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(2.9532, 0.560959, 0, -0.25131, 6.59197, 0, 0, 0, 4.10999, -6.44589, 1.03696, 2.95594)
 mesh = SubResource("BoxMesh_i6gn1")
 skeleton = NodePath("../..")
+
+[node name="SlantedGround1" parent="." instance=ExtResource("3_etrhe")]
+transform = Transform3D(-2.66528e-08, 0, -0.609745, 0, 0.609745, 0, 0.609745, 0, -2.66528e-08, -0.210231, 1.03383, 3.55542)
+
+[node name="SlantedGround2" parent="." instance=ExtResource("3_etrhe")]
+transform = Transform3D(7.99584e-08, 0, 0.609745, 0, 0.609745, 0, -0.609745, 0, 7.99584e-08, -0.210228, 1.03383, -16.763)
