@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c3cln4mk23snh"
-path="res://.godot/imported/WizardWand.blend-5fd342b9c94d1e3923194c4cfcf982ed.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Models/WizardWand.blend"
-dest_files=["res://.godot/imported/WizardWand.blend-5fd342b9c94d1e3923194c4cfcf982ed.scn"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6wams04ga8gn"
-path="res://.godot/imported/ShrinkGun.blend-6a11c0465b3205685e575a3385836e24.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Models/ShrinkGun.blend"
-dest_files=["res://.godot/imported/ShrinkGun.blend-6a11c0465b3205685e575a3385836e24.scn"]
 
 [params]
 

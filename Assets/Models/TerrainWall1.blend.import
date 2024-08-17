@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wwspsodwmpt"
-path="res://.godot/imported/TerrainWall1.blend-af8cbcb2bfd00c22e4ff2caf9f4fad1a.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Models/TerrainWall1.blend"
-dest_files=["res://.godot/imported/TerrainWall1.blend-af8cbcb2bfd00c22e4ff2caf9f4fad1a.scn"]
 
 [params]
 
