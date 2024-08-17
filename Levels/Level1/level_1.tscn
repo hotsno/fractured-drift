@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=4 format=3 uid="uid://82f5jnd1cle3"]
+
+[ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kulbv"]
 size = Vector3(10, 0.5, 10)
@@ -64,3 +66,6 @@ mesh = SubResource("BoxMesh_i6gn1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.00437468, -0.714137, -0.699992, -0.0689102, -0.69855, 0.712236, -0.997613, 0.0451206, -0.0522672, 0.573872, 2.01453, 2.86283)
 shadow_enabled = true
+
+[node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1769, 5.61345, 8.02944)
