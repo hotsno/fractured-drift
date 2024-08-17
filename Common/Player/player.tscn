@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://drkbyftyse3xy"]
+[gd_scene load_steps=8 format=3 uid="uid://drkbyftyse3xy"]
 
 [ext_resource type="Script" path="res://Common/Player/Player.gd" id="1_0cuco"]
 [ext_resource type="Script" path="res://Common/Player/Camera.gd" id="2_drhgb"]
 [ext_resource type="PackedScene" uid="uid://dmpf1ksqe41gs" path="res://Common/Tools/wand.tscn" id="2_uydla"]
+[ext_resource type="PackedScene" uid="uid://d0h6oelraxi32" path="res://Common/UI/UIRoot/ui_root.tscn" id="4_3hwe0"]
+[ext_resource type="PackedScene" uid="uid://dnj8tthmj14mg" path="res://Common/UI/Crosshair/crosshair.tscn" id="5_wslm0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yaqnn"]
 
@@ -47,5 +49,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801, -0.416, -0.495)
 
 [node name="InteractCooldownTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="UIRoot" parent="." instance=ExtResource("4_3hwe0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Crosshair" parent="UIRoot" instance=ExtResource("5_wslm0")]
 
 [connection signal="clicked_on_selecatable_object" from="Head/Camera3D" to="Head/Wand" method="_on_camera_3d_clicked_on_selecatable_object"]
