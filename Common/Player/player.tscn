@@ -13,11 +13,11 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295418, 0)
 collision_mask = 6
 script = ExtResource("1_0cuco")
-head_path = NodePath("Head")
-camera_path = NodePath("Head/Camera3D")
 interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
 object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
 interact_timer_path = NodePath("InteractCooldownTimer")
+head_path = NodePath("Head")
+camera_path = NodePath("Head/Camera3D")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843123, 0)

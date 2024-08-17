@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6x8jmhi5pj3"]
+[gd_scene load_steps=12 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="Script" path="res://Levels/Sandbox/sandbox.gd" id="1_eckd0"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="2_407qt"]
 [ext_resource type="PackedScene" uid="uid://82f5jnd1cle3" path="res://Levels/Level1/level_1.tscn" id="2_jhfka"]
 [ext_resource type="PackedScene" uid="uid://b41bdioubwrgg" path="res://Common/UI/ContinueMessage/continue_message.tscn" id="3_bcykf"]
+[ext_resource type="PackedScene" uid="uid://dnj8tthmj14mg" path="res://Common/UI/Crosshair/crosshair.tscn" id="7_rfq3e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,6 +54,16 @@ layout_mode = 1
 grow_horizontal = 1
 grow_vertical = 1
 next_level = ExtResource("2_jhfka")
+
+[node name="Crosshair" parent="UIRoot" instance=ExtResource("7_rfq3e")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="level_complete" from="." to="UIRoot/ContinueMessage" method="_on_sandbox_level_complete"]
 [connection signal="stepped_on" from="BlockDispenser" to="." method="_on_block_dispenser_stepped_on"]
