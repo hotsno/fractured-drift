@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://drkbyftyse3xy"]
+[gd_scene load_steps=6 format=3 uid="uid://drkbyftyse3xy"]
 
 [ext_resource type="Script" path="res://Common/Player/Player.gd" id="1_0cuco"]
+[ext_resource type="Script" path="res://Common/Player/Camera.gd" id="2_drhgb"]
+[ext_resource type="PackedScene" uid="uid://dmpf1ksqe41gs" path="res://Common/Tools/wand.tscn" id="2_uydla"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yaqnn"]
 
@@ -13,6 +15,9 @@ collision_mask = 6
 script = ExtResource("1_0cuco")
 head_path = NodePath("Head")
 camera_path = NodePath("Head/Camera3D")
+interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
+object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
+interact_timer_path = NodePath("InteractCooldownTimer")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843123, 0)
@@ -29,3 +34,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43601, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
+script = ExtResource("2_drhgb")
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+
+[node name="ObjectHoldingPoint" type="Marker3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.19462)
+
+[node name="Wand" parent="Head" instance=ExtResource("2_uydla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801, -0.416, -0.495)
+
+[node name="InteractCooldownTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="clicked_on_selecatable_object" from="Head/Camera3D" to="Head/Wand" method="_on_camera_3d_clicked_on_selecatable_object"]
