@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://6x8jmhi5pj3"]
+[gd_scene load_steps=7 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
-[ext_resource type="Script" path="res://Levels/Sandbox/sandbox.gd" id="1_xbwkr"]
 [ext_resource type="PackedScene" uid="uid://dk811qarbst5q" path="res://Common/PressurePlate/pressure_plate.tscn" id="2_ajwrk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
@@ -21,7 +20,6 @@ glow_enabled = true
 albedo_color = Color(0, 0.490196, 0, 1)
 
 [node name="Sandbox" type="Node3D"]
-script = ExtResource("1_xbwkr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
