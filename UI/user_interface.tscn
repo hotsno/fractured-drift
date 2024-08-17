@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cghsardm5ah2o"]
 
 [ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="1_7gwsd"]
-[ext_resource type="Script" path="res://Common/UI/user_interface.gd" id="1_oc43m"]
-[ext_resource type="Script" path="res://Common/UI/continue_message.gd" id="2_1idsd"]
+[ext_resource type="Script" path="res://UI/user_interface.gd" id="1_oc43m"]
+[ext_resource type="Script" path="res://UI/continue_message.gd" id="2_1idsd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5v53y"]
 font = ExtResource("1_7gwsd")

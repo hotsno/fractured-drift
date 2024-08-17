@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
-[ext_resource type="PackedScene" uid="uid://cghsardm5ah2o" path="res://Common/UI/user_interface.tscn" id="1_nl84h"]
+[ext_resource type="PackedScene" uid="uid://cghsardm5ah2o" path="res://UI/user_interface.tscn" id="1_nl84h"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="2_407qt"]
 [ext_resource type="PackedScene" uid="uid://82f5jnd1cle3" path="res://Levels/Level1/level_1.tscn" id="2_jhfka"]
 
