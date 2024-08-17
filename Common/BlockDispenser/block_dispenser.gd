@@ -7,13 +7,13 @@ signal stepped_on
 var block_instance: Node
 
 func spawn_block():
-	var block_instance = block_scene.instantiate()
-	block_instance.position = spawn_location
-	add_child(block_instance)
-	self.block_instance = block_instance
+	var new_block_instance = block_scene.instantiate()
+	new_block_instance.position = spawn_location
+	add_child(new_block_instance)
+	self.block_instance = new_block_instance
 
 func _on_pressure_plate_stepped_on():
-	emit_signal("stepped_on")
+	stepped_on.emit()
 	if not block_instance:
 		spawn_block()
 	else:

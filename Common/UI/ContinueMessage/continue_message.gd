@@ -5,7 +5,7 @@ extends Label
 func _ready():
 	self.visible = false
 
-func _process(delta):
+func _process(_delta):
 	if not self.visible:
 		return
 	if Input.is_action_just_pressed("enter"):
@@ -13,3 +13,4 @@ func _process(delta):
 
 func _on_sandbox_level_complete():
 	self.visible = true
+	
