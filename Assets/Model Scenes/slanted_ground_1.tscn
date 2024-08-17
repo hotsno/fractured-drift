@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6x83vpaxoxl6"]
+
+[ext_resource type="PackedScene" uid="uid://buo66rmabm021" path="res://Assets/Model Exports/SlantedGround1.glb" id="1_jw6lq"]
+
+[node name="SlantedGround1" instance=ExtResource("1_jw6lq")]
