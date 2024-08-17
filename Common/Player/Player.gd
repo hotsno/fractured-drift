@@ -16,12 +16,16 @@ const FOV_CHANGE = 1.5
 
 var gravity = 15
 
-@export var head_path: NodePath
 @onready var head: Node3D = get_node(head_path)
-@export var camera_path: NodePath
 @onready var camera: Node3D = get_node(camera_path)
 
+@export var head_path: NodePath
+@export var camera_path: NodePath
+
+@export var spawn_location: Vector3
+
 func _ready():
+	move_to_spawn_location()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
@@ -79,3 +83,7 @@ func _on_coin_coin_collected():
 	speed_multiplier = 1.5
 	await get_tree().create_timer(10.0).timeout
 	speed_multiplier = 1.0
+
+func move_to_spawn_location():
+	self.position = spawn_location
+	
