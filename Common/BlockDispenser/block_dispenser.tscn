@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dptxxfq5t8517"]
+
+[ext_resource type="Script" path="res://Common/BlockDispenser/block_dispenser.gd" id="1_f0dh5"]
+[ext_resource type="PackedScene" uid="uid://dk811qarbst5q" path="res://Common/PressurePlate/pressure_plate.tscn" id="2_cysk1"]
+
+[node name="BlockDispenser" type="Node3D"]
+script = ExtResource("1_f0dh5")
+
+[node name="PressurePlate" parent="." instance=ExtResource("2_cysk1")]
+
+[connection signal="stepped_on" from="PressurePlate" to="." method="_on_pressure_plate_stepped_on"]

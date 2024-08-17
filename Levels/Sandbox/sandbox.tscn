@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
-[ext_resource type="PackedScene" uid="uid://dk811qarbst5q" path="res://Common/PressurePlate/pressure_plate.tscn" id="2_ajwrk"]
+[ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="2_407qt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,7 +38,5 @@ size = Vector3(34.5371, 0.001, 32.9307)
 collision_layer = 2
 collision_mask = 7
 
-[node name="PressurePlate" parent="." instance=ExtResource("2_ajwrk")]
-collision_mask = 3
-
-[connection signal="stepped_on" from="PressurePlate" to="." method="_on_pressure_plate_stepped_on"]
+[node name="BlockDispenser" parent="." instance=ExtResource("2_407qt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
