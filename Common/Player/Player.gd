@@ -116,4 +116,3 @@ func _drop_object():
 		picked_object = null
 func move_to_spawn_location():
 	self.position = spawn_location
-	
