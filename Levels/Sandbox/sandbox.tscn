@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://6x8jmhi5pj3"]
+[gd_scene load_steps=11 format=3 uid="uid://6x8jmhi5pj3"]
 
+[ext_resource type="Script" path="res://Levels/Sandbox/sandbox.gd" id="1_eckd0"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
-[ext_resource type="PackedScene" uid="uid://cghsardm5ah2o" path="res://UI/user_interface.tscn" id="1_nl84h"]
+[ext_resource type="PackedScene" uid="uid://d0h6oelraxi32" path="res://Common/UI/UIRoot/ui_root.tscn" id="1_nl84h"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="2_407qt"]
 [ext_resource type="PackedScene" uid="uid://82f5jnd1cle3" path="res://Levels/Level1/level_1.tscn" id="2_jhfka"]
+[ext_resource type="PackedScene" uid="uid://b41bdioubwrgg" path="res://Common/UI/ContinueMessage/continue_message.tscn" id="3_bcykf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,9 +24,7 @@ glow_enabled = true
 albedo_color = Color(0, 0.490196, 0, 1)
 
 [node name="Sandbox" type="Node3D"]
-
-[node name="UserInterface" parent="." instance=ExtResource("1_nl84h")]
-next_level = ExtResource("2_jhfka")
+script = ExtResource("1_eckd0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -45,3 +45,14 @@ collision_mask = 7
 
 [node name="BlockDispenser" parent="." instance=ExtResource("2_407qt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
+
+[node name="UIRoot" parent="." instance=ExtResource("1_nl84h")]
+
+[node name="ContinueMessage" parent="UIRoot" instance=ExtResource("3_bcykf")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+next_level = ExtResource("2_jhfka")
+
+[connection signal="level_complete" from="." to="UIRoot/ContinueMessage" method="_on_sandbox_level_complete"]
+[connection signal="stepped_on" from="BlockDispenser" to="." method="_on_block_dispenser_stepped_on"]
