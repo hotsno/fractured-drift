@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=5 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
+[ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kulbv"]
 size = Vector3(10, 0.5, 10)
@@ -69,3 +70,6 @@ shadow_enabled = true
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1769, 5.61345, 8.02944)
+
+[node name="Player" parent="." instance=ExtResource("2_xfy54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 0.935791, 4.16866)
