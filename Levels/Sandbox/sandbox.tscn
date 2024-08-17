@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://6x8jmhi5pj3"]
+[gd_scene load_steps=8 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
+[ext_resource type="Script" path="res://Levels/Sandbox/sandbox.gd" id="1_xbwkr"]
+[ext_resource type="PackedScene" uid="uid://dk811qarbst5q" path="res://Common/PressurePlate/pressure_plate.tscn" id="2_ajwrk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,7 +20,8 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie2my"]
 albedo_color = Color(0, 0.490196, 0, 1)
 
-[node name="World" type="Node3D"]
+[node name="Sandbox" type="Node3D"]
+script = ExtResource("1_xbwkr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -30,8 +33,14 @@ environment = SubResource("Environment_4k1c3")
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ie2my")
 use_collision = true
-collision_layer = 4
 collision_mask = 0
 size = Vector3(34.5371, 0.001, 32.9307)
 
 [node name="Player" parent="." instance=ExtResource("1_nd88y")]
+collision_layer = 2
+collision_mask = 7
+
+[node name="PressurePlate" parent="." instance=ExtResource("2_ajwrk")]
+collision_mask = 3
+
+[connection signal="stepped_on" from="PressurePlate" to="." method="_on_pressure_plate_stepped_on"]

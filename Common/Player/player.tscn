@@ -17,6 +17,7 @@ spotlight_path = NodePath("Head/SpotLight3D")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843123, 0)
+visible = false
 layers = 3
 mesh = SubResource("CapsuleMesh_yaqnn")
 

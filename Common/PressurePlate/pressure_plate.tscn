@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk811qarbst5q"]
+
+[ext_resource type="Script" path="res://Common/PressurePlate/pressure_plate.gd" id="1_ijuiy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yn0ry"]
+size = Vector3(0.5, 0.005, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdd51"]
+size = Vector3(0.5, 0.005, 0.5)
+
+[node name="PressurePlate" type="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
+script = ExtResource("1_ijuiy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)
+mesh = SubResource("BoxMesh_yn0ry")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)
+shape = SubResource("BoxShape3D_pdd51")
