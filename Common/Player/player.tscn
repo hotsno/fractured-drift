@@ -13,7 +13,6 @@ collision_mask = 6
 script = ExtResource("1_0cuco")
 head_path = NodePath("Head")
 camera_path = NodePath("Head/Camera3D")
-spotlight_path = NodePath("Head/SpotLight3D")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843123, 0)
@@ -30,9 +29,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43601, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00218594, 0)
-light_color = Color(0.862745, 0.729412, 0.501961, 1)
-spot_range = 11.0
-spot_angle = 28.2299

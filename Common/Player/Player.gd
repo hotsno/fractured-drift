@@ -20,8 +20,6 @@ var gravity = 15
 @onready var head: Node3D = get_node(head_path)
 @export var camera_path: NodePath
 @onready var camera: Node3D = get_node(camera_path)
-@export var spotlight_path: NodePath
-@onready var spotlight: Node3D = get_node(spotlight_path)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -36,7 +34,6 @@ func _unhandled_input(event):
 		var x_offset = -event.relative.y * SENSITIVITY
 		var x_rotation = clamp(camera.rotation.x + x_offset, deg_to_rad(-40), deg_to_rad(60))
 		camera.rotation.x = x_rotation
-		spotlight.rotation.x = x_rotation
 
 func _physics_process(delta):
 	if not is_on_floor():
