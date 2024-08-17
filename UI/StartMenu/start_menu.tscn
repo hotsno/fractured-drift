@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtjoamt8pwng5"]
+
+[ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
+[ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
+[ext_resource type="PackedScene" uid="uid://6x8jmhi5pj3" path="res://Levels/Sandbox/sandbox.tscn" id="2_ako83"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4fbxi")
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -50.5
+offset_right = 31.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainButtons"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("1_o7xcx")
+first_scene = ExtResource("2_ako83")
+
+[node name="CreditsButton" type="Button" parent="MainButtons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="MainButtons"]
+layout_mode = 2
+text = "Quit"
