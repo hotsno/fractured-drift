@@ -80,11 +80,7 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 
-	if picked_object:
-		var a = picked_object.global_position
-		var b = object_holding_point.global_position
-		picked_object.set_linear_velocity((b - a) * pull_power)
-
+	_run_pickup_object_logic()
 	move_and_slide()
 
 func _headbob(time) -> Vector3:
@@ -105,6 +101,12 @@ func _input(_event):
 			interact_timer.start()
 		elif picked_object and interact_timer.timeout:
 			_drop_object()
+
+func _run_pickup_object_logic():
+	if picked_object:
+		var a = picked_object.global_position
+		var b = object_holding_point.global_position
+		picked_object.set_linear_velocity((b - a) * pull_power)
 
 func _pick_object():
 	var collider = interaction_raycast.get_collider()
