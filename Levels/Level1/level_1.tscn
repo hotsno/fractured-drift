@@ -14,53 +14,15 @@ size = Vector3(10, 0.5, 10)
 transform = Transform3D(1.92235, 0, 0, 0, 7.72394, 0, 0, 0, 0.955025, 0.143272, -1.47959, 1.03242)
 mesh = SubResource("BoxMesh_kulbv")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60614, -0.122986, 1.42246)
+use_collision = true
+collision_layer = 6
+size = Vector3(6.61267, 0.754028, 13.3214)
+
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.92235, 0, 0, 0, 8.41421, 0, 0, 0, 0.955025, 0.143272, -1.57533, -13.9556)
 mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.198402, 0.751624, 0.395936, -1.00714, -0.155517, 0.0476961, 0.0572121, -0.131144, 2.21266, -8.02646, 1.57173, -4.4061)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.206042, 0.749014, -0.417895, -1.00705, -0.155926, 0.0446653, -0.0186191, 0.144871, 2.20868, -8.03249, 1.57699, -8.05455)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.126339, 6.75159, 0.0126402, -0.385078, -2.21191, 0.0747285, 0.021631, 0.0569382, 1.40416, -7.39212, 6.97732, -7.12161)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00280331, 7.10287, 0.00862383, -0.141534, -0.136992, -0.0234033, -0.00516271, -0.101207, 0.636913, 11.4941, 6.77328, -6.55643)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0300526, 7.02432, 0.00724776, -0.198541, -1.0586, -0.0196689, -0.00688847, -0.134008, 0.535283, 11.2249, 6.59299, -1.04202)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.093167, 6.61722, 0.0143535, -0.238388, -2.58034, -0.0389524, -0.00749806, -0.184413, 1.06008, 10.9972, 7.09974, -13.0333)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.293853, 5.1998, 0.00386031, -0.315042, -4.8371, 0.022822, 0.0194116, 0.210619, 0.428827, -6.27561, 8.653, -7.22084)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.201394, -0.763481, -0.0357436, -1.00791, 0.152192, 0.057654, -0.0226547, 0.0160478, -2.24729, 9.21612, 1.51031, -4.23485)
-mesh = SubResource("BoxMesh_kulbv")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.69426, 0, 0, 0, 4.43617, 0, 0, 0, 3.75939, 8.58105, 1.27257, -11.8388)
-mesh = SubResource("BoxMesh_i6gn1")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.68171, 1.53003, 0, -1.26214, 3.2509, 0, 0, 0, 2.57897, -5.85767, 7.94925, 0.628014)
-mesh = SubResource("BoxMesh_i6gn1")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.9532, 0.560959, 0, -0.25131, 6.59197, 0, 0, 0, 4.10999, -6.44589, 1.03696, 2.95594)
-mesh = SubResource("BoxMesh_i6gn1")
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -69,7 +31,75 @@ transform = Transform3D(0.00437468, -0.714137, -0.699992, -0.0689102, -0.69855, 
 shadow_enabled = true
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1769, 5.61345, 8.02944)
+transform = Transform3D(0.657768, 0, 0, 0, 0.674481, 0, 0, 0, 1, 12.0696, 0.86932, 2.12184)
+
+[node name="TerrainWall2" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(0.797477, 0.067687, -0.149752, -0.0688009, 0.870808, -0.0455167, 0.117743, 0.0503936, 0.987675, 12.8869, -3.01118, -5.71833)
+
+[node name="TerrainWall3" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(0.808343, 0.0359373, -0.0225676, -0.0294376, 1.01663, -0.0505677, 0.0167795, 0.0523001, 0.998466, 15.2459, 1.75014, -5.14124)
+
+[node name="TerrainWall4" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(0.633417, 0.0308666, 0.621131, 0.00350232, 0.873188, -0.0621469, -0.503325, 0.0449206, 0.781239, 13.7448, 1.43306, -11.1404)
 
 [node name="Player" parent="." instance=ExtResource("2_xfy54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 0.935791, 4.16866)
+
+[node name="CliffWalls" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.198402, 0.751624, 0.395936, -1.00714, -0.155517, 0.0476961, 0.0572121, -0.131144, 2.21266, -8.02646, 1.57173, -4.4061)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.206042, 0.749014, -0.417895, -1.00705, -0.155926, 0.0446653, -0.0186191, 0.144871, 2.20868, -8.03249, 1.57699, -8.05455)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.126339, 6.75159, 0.0126402, -0.385078, -2.21191, 0.0747285, 0.021631, 0.0569382, 1.40416, -7.39212, 6.97732, -7.12161)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.00280331, 7.10287, 0.00862383, -0.141534, -0.136992, -0.0234033, -0.00516271, -0.101207, 0.636913, 11.4941, 6.77328, -6.55643)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.0300526, 7.02432, 0.00724776, -0.198541, -1.0586, -0.0196689, -0.00688847, -0.134008, 0.535283, 11.2249, 6.59299, -1.04202)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.093167, 6.61722, 0.0143535, -0.238388, -2.58034, -0.0389524, -0.00749806, -0.184413, 1.06008, 10.9972, 7.09974, -13.0333)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.293853, 5.1998, 0.00386031, -0.315042, -4.8371, 0.022822, 0.0194116, 0.210619, 0.428827, -6.27561, 8.653, -7.22084)
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(-0.201394, -0.763481, -0.0357436, -1.00791, 0.152192, 0.057654, -0.0226547, 0.0160478, -2.24729, 9.21612, 1.51031, -4.23485)
+visible = false
+mesh = SubResource("BoxMesh_kulbv")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(3.69426, 0, 0, 0, 4.43617, 0, 0, 0, 3.75939, 8.58105, 1.27257, -11.8388)
+mesh = SubResource("BoxMesh_i6gn1")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(2.68171, 1.53003, 0, -1.26214, 3.2509, 0, 0, 0, 2.57897, -5.85767, 7.94925, 0.628014)
+mesh = SubResource("BoxMesh_i6gn1")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="CliffWalls"]
+transform = Transform3D(2.9532, 0.560959, 0, -0.25131, 6.59197, 0, 0, 0, 4.10999, -6.44589, 1.03696, 2.95594)
+mesh = SubResource("BoxMesh_i6gn1")
+skeleton = NodePath("../..")
