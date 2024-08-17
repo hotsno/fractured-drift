@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtjoamt8pwng5"]
+[gd_scene load_steps=9 format=3 uid="uid://dtjoamt8pwng5"]
 
 [ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
 [ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
 [ext_resource type="PackedScene" uid="uid://6x8jmhi5pj3" path="res://Levels/Sandbox/sandbox.tscn" id="2_ako83"]
+[ext_resource type="Script" path="res://UI/StartMenu/main_buttons.gd" id="2_cjabl"]
+[ext_resource type="Script" path="res://UI/StartMenu/credits.gd" id="4_2j832"]
+[ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="4_rsm27"]
+[ext_resource type="Script" path="res://UI/StartMenu/quit_button.gd" id="5_v247p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4o0sv"]
+font = ExtResource("4_rsm27")
+font_size = 50
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -26,6 +34,7 @@ offset_right = 31.5
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_cjabl")
 
 [node name="StartButton" type="Button" parent="MainButtons"]
 layout_mode = 2
@@ -40,3 +49,52 @@ text = "Credits"
 [node name="QuitButton" type="Button" parent="MainButtons"]
 layout_mode = 2
 text = "Quit"
+script = ExtResource("5_v247p")
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_2j832")
+
+[node name="CreditsLabel" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -63.5
+offset_right = 530.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by Kurasaki, Miyazaki, and hotsugano using Godot"
+label_settings = SubResource("LabelSettings_4o0sv")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="Credits"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -53.475
+offset_right = 22.5
+offset_bottom = -22.475
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="MainButtons/CreditsButton" to="MainButtons" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainButtons/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Credits/BackButton" to="MainButtons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/BackButton" to="Credits" method="_on_back_button_pressed"]
