@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=8 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
-[ext_resource type="Script" path="res://Levels/Level1/lava.gd" id="5_u5umi"]
-[ext_resource type="Shader" path="res://Levels/Level1/Fog.gdshader" id="5_moxpa"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_emao7"]
 albedo = Color(0.955189, 0.924754, 0.940363, 1)
@@ -13,32 +11,8 @@ emission = Color(0.911284, 0.792478, 0.806666, 1)
 edge_fade = 1e-05
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p5fk0"]
-render_priority = 0
-shader = ExtResource("5_moxpa")
-shader_parameter/enable_fog = true
-shader_parameter/fog_color = null
-shader_parameter/noise_color = null
-shader_parameter/fog_distance = 100.0
-shader_parameter/fog_fade_range = 50.0
-shader_parameter/enable_noise = true
-shader_parameter/noise_time_fac = 4.0
-shader_parameter/enable_color_limitation = true
-shader_parameter/color_levels = 32
-shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 0.3
 
-[sub_resource type="BoxMesh" id="BoxMesh_ach78"]
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qnlcj"]
-emission_enabled = true
-emission = Color(0.947157, 0.16229, 0, 1)
-emission_energy_multiplier = 36.35
-
-[sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
-size = Vector3(20.46, 0.14, 7.53)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
-size = Vector3(20.46, 0.14, 7.53)
+[sub_resource type="PlaneMesh" id="PlaneMesh_wfopp"]
 
 [node name="Level1" type="Node3D"]
 
@@ -76,8 +50,14 @@ transform = Transform3D(0.786212, 0.067687, 0.222893, -0.0504578, 0.870808, -0.0
 [node name="TerrainWall11" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(1.25177, 0.09609, 0.485105, -0.0803366, 1.23622, -0.160137, -0.29311, 0.07154, 2.1156, 5.77953, 2.60149, -36.7046)
 
+[node name="TerrainWall13" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(1.25244, 0.131689, -0.480167, -0.113494, 1.6942, -0.0854227, 0.278957, 0.0980434, 2.12106, 13.126, 3.3983, 25.2883)
+
 [node name="TerrainWall12" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(1.24652, -0.146402, 0.485105, 0.176825, 1.22685, -0.160137, -0.27244, 0.126434, 2.1156, -12.6116, 2.92105, -32.4633)
+
+[node name="TerrainWall14" parent="." instance=ExtResource("1_l681o")]
+transform = Transform3D(1.24652, -0.219835, 0.485105, 0.176825, 1.84222, -0.160137, -0.27244, 0.189852, 2.1156, -7.87706, 0.567975, 23.1874)
 
 [node name="TerrainWall10" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(1.04026, 0.0969717, 0.281455, -0.0667624, 1.24756, -0.0929102, -0.243584, 0.0721964, 1.22746, 14.0969, 0.316037, 6.91862)
@@ -97,38 +77,34 @@ transform = Transform3D(-2.66528e-08, 0, -0.609745, 0, 0.609745, 0, 0.609745, 0,
 [node name="SlantedGround2" parent="." instance=ExtResource("3_etrhe")]
 transform = Transform3D(3.69132e-07, 0, 0.609745, 0, 0.609745, 0, -2.81492, 0, 7.99584e-08, -0.210223, 2.71981, -58.5264)
 
+[node name="SlantedGround4" parent="." instance=ExtResource("3_etrhe")]
+transform = Transform3D(-6.15221e-07, 0, -0.609745, 0, 0.609745, 0, 2.81492, 0, -1.33264e-07, -0.210236, 2.71981, 45.5526)
+
 [node name="SlantedGround3" parent="." instance=ExtResource("3_etrhe")]
 transform = Transform3D(7.99584e-08, 0, 0.609745, 0, 0.609745, 0, -0.609745, 0, 7.99584e-08, -0.210228, 1.03383, -16.763)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_1uty1")
 
-[node name="Lava" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
-script = ExtResource("5_u5umi")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava"]
-material_override = SubResource("ORMMaterial3D_qnlcj")
-cast_shadow = 0
-mesh = SubResource("BoxMesh_nuwb3")
-skeleton = NodePath("../../CliffWalls")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava"]
-shape = SubResource("BoxShape3D_eulps")
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88586, 3.26606, -22.7389)
 size = Vector3(16.5152, 11.5833, 12.7666)
 material = SubResource("FogMaterial_emao7")
 
 [node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411073, 3.26606, 14.7747)
-size = Vector3(28.1307, 11.5833, 12.7666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51899, 3.26606, 11.7345)
+size = Vector3(23.5065, 11.5833, 12.0452)
 material = SubResource("FogMaterial_emao7")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Barriers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61609, 10.8053)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(-11.0036, 1.49012e-07, 0, 4.44089e-14, 7.9284e-08, 4.21096, 9.53674e-07, 1.81381, -1.84067e-07, -7.05579, 14.7874, -44.3658)
+[node name="ExitBarrier" type="MeshInstance3D" parent="Barriers"]
+transform = Transform3D(-11.0036, 1.49012e-07, 0, 4.44089e-14, 7.9284e-08, 4.21096, 9.53674e-07, 1.81381, -1.84067e-07, -7.05579, -1.55948, -44.3658)
 material_override = SubResource("ShaderMaterial_p5fk0")
-mesh = SubResource("BoxMesh_ach78")
+mesh = SubResource("PlaneMesh_wfopp")
+
+[node name="EnterBarrier" type="MeshInstance3D" parent="Barriers"]
+transform = Transform3D(10.8952, -0.253938, 0, -6.73388e-08, -7.85032e-08, 4.21096, -1.54053, -1.79594, -1.84067e-07, 1.73672, -1.55947, 9.78298)
+material_override = SubResource("ShaderMaterial_p5fk0")
+mesh = SubResource("PlaneMesh_wfopp")
