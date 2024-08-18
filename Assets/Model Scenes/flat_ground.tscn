@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://wlphe20057tu"]
+
+[ext_resource type="Shader" path="res://Assets/Model Scenes/terrain_wall_1.gdshader" id="1_gv7ho"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npx1s"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_10ntq"]
+seed = 3
+fractal_octaves = 8
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6qgrq"]
+noise = SubResource("FastNoiseLite_10ntq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ybjj0"]
+render_priority = 0
+shader = ExtResource("1_gv7ho")
+shader_parameter/tint = Color(0.792157, 0.764706, 0.666667, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/shadow_size = 0.1
+shader_parameter/shadow_blend = 0.001
+shader_parameter/shadow_extra_intensity = 0.375
+shader_parameter/shadow_color = Color(0.454902, 0.439216, 0.352941, 1)
+shader_parameter/light_tint = Color(1, 1, 1, 1)
+shader_parameter/rimlight_size = 0.921
+shader_parameter/rimlight_blend = 0.01
+shader_parameter/rimlight_color = null
+shader_parameter/use_normalmap = true
+shader_parameter/animated = true
+shader_parameter/time_scale = 0.02
+shader_parameter/normal_bias = Vector3(0, 0, 0)
+shader_parameter/light_bias = Vector3(0, 0, 0)
+shader_parameter/use_view = true
+shader_parameter/view_bias = Color(1, 0, 1, 1)
+shader_parameter/view_multiplier = -1.0
+shader_parameter/normal_map = SubResource("NoiseTexture2D_6qgrq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0faop"]
+
+[node name="FlatGround" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_npx1s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_ybjj0")
+mesh = SubResource("BoxMesh_0faop")

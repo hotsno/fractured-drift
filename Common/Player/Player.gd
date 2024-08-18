@@ -3,7 +3,7 @@ extends CharacterBody3D
 var speed
 var speed_multiplier = 1.0
 const WALK_SPEED = 5.0
-const JUMP_VELOCITY = 6.0
+const JUMP_VELOCITY = 8.0
 const SENSITIVITY = 0.004
 
 const BOB_FREQ = 2.4
@@ -25,7 +25,7 @@ var gravity = 15
 @onready var object_holding_point: Marker3D = get_node(object_holding_point_path)
 @onready var interact_timer: Timer = get_node(interact_timer_path)
 
-var picked_object: Node3D
+var picked_object: RigidBody3D
 var pull_power = 4
 @export var head_path: NodePath
 @export var camera_path: NodePath
@@ -117,6 +117,14 @@ func _pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider and collider.is_in_group("ResizeableObjects"):
 		picked_object = collider
+		picked_object.set_collision_layer_value(2, false)
+		picked_object.set_collision_mask_value(1, false)
+		picked_object.set_collision_mask_value(2, false)
+		picked_object.set_collision_mask_value(3, false)
 func _drop_object():
 	if picked_object:
+		picked_object.set_collision_layer_value(2, true)
+		picked_object.set_collision_mask_value(1, true)
+		picked_object.set_collision_mask_value(2, true)
+		picked_object.set_collision_mask_value(3, true)
 		picked_object = null
