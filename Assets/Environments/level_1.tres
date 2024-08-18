@@ -8,8 +8,10 @@ colors = PackedColorArray(0, 0, 0, 1, 0.0833, 0.0833, 0.17, 1, 0.738806, 0.73880
 gradient = SubResource("Gradient_wbits")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7oxyo"]
-sky_top_color = Color(0.676977, 0.639948, 0.645424, 1)
+sky_top_color = Color(0.574539, 0.661199, 0.752804, 1)
+sky_horizon_color = Color(0.468975, 0.47888, 0.494516, 1)
 sky_energy_multiplier = 18.38
+sun_angle_max = 360.0
 
 [sub_resource type="Sky" id="Sky_rnxr1"]
 sky_material = SubResource("ProceduralSkyMaterial_7oxyo")
@@ -40,14 +42,13 @@ glow_blend_mode = 1
 fog_enabled = true
 fog_light_color = Color(0.720343, 0.644482, 0.617535, 1)
 fog_light_energy = 2.86
-fog_sun_scatter = 0.09
 fog_density = 0.001
-fog_sky_affect = 0.0
-fog_height = -17.16
-fog_height_density = -0.019
+fog_sky_affect = 0.235
+fog_height = 8.04
+fog_height_density = -0.197
 fog_depth_curve = 0.353554
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
+volumetric_fog_density = 0.0155
 volumetric_fog_albedo = Color(0.918042, 0.876267, 0.817398, 1)
 volumetric_fog_gi_inject = 2.0
 volumetric_fog_length = 24.0
