@@ -42,7 +42,6 @@ collision_mask = 0
 size = Vector3(34.5371, 0.001, 32.9307)
 
 [node name="Player" parent="." instance=ExtResource("1_nd88y")]
-collision_mask = 7
 
 [node name="BlockDispenser" parent="." instance=ExtResource("2_407qt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
