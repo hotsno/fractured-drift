@@ -65,7 +65,7 @@ transform = Transform3D(-1.26346, 2.85173, 0.0633999, 0.708385, 5.08296, 0.14206
 transform = Transform3D(-1.312, 2.88365, 0.441537, 0.579488, 6.81242, 0.11464, -0.202569, 0.811358, -2.53182, -33.97, -8.8733, 14.9679)
 
 [node name="Player" parent="." instance=ExtResource("2_lx38d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 4.18283, 4.16866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 4.18283, 9.25726)
 
 [node name="SlantedGround1" parent="." instance=ExtResource("3_bbp1t")]
 transform = Transform3D(-4.49071e-08, 0, -1.63399, 0, 0.609745, 0, 1.02735, 0, -7.14238e-08, -0.460959, 1.67841, -5.81054)
@@ -88,6 +88,7 @@ spawn_location = Vector3i(5, 5, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00931, 0, -6.12085)
+collision_layer = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127098, 0.410919, 0)
