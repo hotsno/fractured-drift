@@ -16,9 +16,11 @@ size = Vector3(10, 0.5, 10)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.00437468, -0.714137, -0.699992, -0.0689102, -0.69855, 0.712236, -0.997613, 0.0451206, -0.0522672, 0.573872, 2.01453, 2.86283)
+light_energy = 10.0
+light_indirect_energy = 0.3
+light_volumetric_fog_energy = 2.0
 shadow_enabled = true
-shadow_opacity = 0.74
-shadow_blur = 10.0
+shadow_bias = 0.008
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(0.657768, 0, 0, 0, 0.674481, 0, 0, 0, 1, 12.0696, 0.86932, 2.12184)
