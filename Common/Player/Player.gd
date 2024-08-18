@@ -118,7 +118,13 @@ func _pick_object():
 	if collider and collider.is_in_group("ResizeableObjects"):
 		picked_object = collider
 		picked_object.set_collision_layer_value(2, false)
+		picked_object.set_collision_mask_value(1, false)
+		picked_object.set_collision_mask_value(2, false)
+		picked_object.set_collision_mask_value(3, false)
 func _drop_object():
 	if picked_object:
 		picked_object.set_collision_layer_value(2, true)
+		picked_object.set_collision_mask_value(1, true)
+		picked_object.set_collision_mask_value(2, true)
+		picked_object.set_collision_mask_value(3, true)
 		picked_object = null
