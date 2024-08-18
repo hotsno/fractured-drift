@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=7 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
+[ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kulbv"]
 size = Vector3(10, 0.5, 10)
@@ -17,7 +18,7 @@ size = Vector3(10, 0.5, 10)
 transform = Transform3D(0.00437468, -0.714137, -0.699992, -0.0689102, -0.69855, 0.712236, -0.997613, 0.0451206, -0.0522672, 0.573872, 2.01453, 2.86283)
 shadow_enabled = true
 shadow_opacity = 0.74
-shadow_blur = 0.394
+shadow_blur = 10.0
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_l681o")]
 transform = Transform3D(0.657768, 0, 0, 0, 0.674481, 0, 0, 0, 1, 12.0696, 0.86932, 2.12184)
@@ -116,3 +117,6 @@ transform = Transform3D(-2.66528e-08, 0, -0.609745, 0, 0.609745, 0, 0.609745, 0,
 
 [node name="SlantedGround2" parent="." instance=ExtResource("3_etrhe")]
 transform = Transform3D(7.99584e-08, 0, 0.609745, 0, 0.609745, 0, -0.609745, 0, 7.99584e-08, -0.210228, 1.03383, -16.763)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_1uty1")
