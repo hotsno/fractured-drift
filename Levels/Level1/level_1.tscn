@@ -1,36 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=11 format=3 uid="uid://82f5jnd1cle3"]
 
-[ext_resource type="Shader" path="res://Levels/lava.gdshader" id="1_hq0py"]
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_70ws5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk8yw"]
-render_priority = 0
-shader = ExtResource("1_hq0py")
-shader_parameter/timeScaleFactor = 0.04
-shader_parameter/uv_scale = 1.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_70ws5")
-
-[sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
-size = Vector3(15.67, 0.14, 7.53)
+[ext_resource type="Script" path="res://Levels/Level1/lava.gd" id="5_u5umi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kulbv"]
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i6gn1"]
 
-[node name="Level1" type="Node3D"]
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qnlcj"]
+emission_enabled = true
+emission = Color(0.947157, 0.16229, 0, 1)
+emission_energy_multiplier = 36.35
 
-[node name="Lava" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113068, -3.02161, -6.34915)
-material_override = SubResource("ShaderMaterial_tk8yw")
-cast_shadow = 0
-mesh = SubResource("BoxMesh_nuwb3")
-skeleton = NodePath("../CliffWalls")
+[sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
+size = Vector3(20.46, 0.14, 7.53)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
+size = Vector3(20.46, 0.14, 7.53)
+
+[node name="Level1" type="Node3D"]
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -142,3 +134,16 @@ transform = Transform3D(7.99584e-08, 0, 0.609745, 0, 0.609745, 0, -0.609745, 0, 
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_1uty1")
+
+[node name="Lava" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
+script = ExtResource("5_u5umi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava"]
+material_override = SubResource("ORMMaterial3D_qnlcj")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_nuwb3")
+skeleton = NodePath("../../CliffWalls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava"]
+shape = SubResource("BoxShape3D_eulps")
