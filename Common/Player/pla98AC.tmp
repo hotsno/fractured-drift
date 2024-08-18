@@ -39,14 +39,13 @@ current = true
 script = ExtResource("2_drhgb")
 
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(2.33, 0, 0, 0, 2.33, 0, 0, 0, 2.33, 0, 0, 0)
 target_position = Vector3(0, 0, -13.73)
 
 [node name="ObjectHoldingPoint" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.6008)
 
 [node name="Wand" parent="Head" instance=ExtResource("2_uydla")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691, -0.416, -0.52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801, -0.416, -0.495)
 
 [node name="InteractCooldownTimer" type="Timer" parent="."]
 wait_time = 0.1

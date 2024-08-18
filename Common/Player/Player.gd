@@ -16,6 +16,9 @@ const FOV_CHANGE = 1.5
 
 var gravity = 15
 
+@export var max_block_size = 5
+@export var mix_block_size = 0.2
+
 @onready var head: Node3D = get_node(head_path)
 @onready var camera: Node3D = get_node(camera_path)
 
@@ -26,7 +29,7 @@ var gravity = 15
 @onready var object_holding_point: Marker3D = get_node(object_holding_point_path)
 @onready var interact_timer: Timer = get_node(interact_timer_path)
 
-var picked_object
+var picked_object: Node3D
 var pull_power = 4
 @export var head_path: NodePath
 @export var camera_path: NodePath
@@ -102,17 +105,32 @@ func _input(_event):
 		elif picked_object and interact_timer.timeout:
 			_drop_object()
 
+	_run_resize_object_logic()
+
+func _run_resize_object_logic():
+	if picked_object:
+		if Input.is_action_pressed("scroll_wheel_up"):
+			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
+			if picked_object.get_node("MeshInstance3D").scale.x <= max_block_size:
+				picked_object.get_node("MeshInstance3D").scale *= 1.1
+				picked_object.get_node("CollisionShape3D").scale *= 1.1
+
+		if Input.is_action_pressed("scroll_wheel_down"):
+			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
+			if picked_object.get_node("MeshInstance3D").scale.x >= mix_block_size:
+				picked_object.get_node("MeshInstance3D").scale *= 0.9
+				picked_object.get_node("CollisionShape3D").scale *= 0.9
+
+
 func _run_pickup_object_logic():
 	if picked_object:
 		var a = picked_object.global_position
 		var b = object_holding_point.global_position
 		picked_object.set_linear_velocity((b - a) * pull_power)
-
 func _pick_object():
 	var collider = interaction_raycast.get_collider()
-	if collider and collider is RigidBody3D:
+	if collider and collider.is_in_group("ResizeableObjects"):
 		picked_object = collider
-
 func _drop_object():
 	if picked_object:
 		picked_object = null

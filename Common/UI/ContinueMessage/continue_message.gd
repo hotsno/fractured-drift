@@ -13,4 +13,3 @@ func _process(_delta):
 
 func _on_sandbox_level_complete():
 	self.visible = true
-	
