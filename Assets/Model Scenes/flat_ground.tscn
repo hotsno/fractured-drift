@@ -37,12 +37,14 @@ shader_parameter/normal_map = SubResource("NoiseTexture2D_6qgrq")
 
 [sub_resource type="BoxMesh" id="BoxMesh_0faop"]
 
-[node name="FlatGround" type="StaticBody3D"]
+[node name="FlatGround" type="Node3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="FlatGround" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlatGround"]
 shape = SubResource("BoxShape3D_npx1s")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FlatGround"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_ybjj0")
 mesh = SubResource("BoxMesh_0faop")
