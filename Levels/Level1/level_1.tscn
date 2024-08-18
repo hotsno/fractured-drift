@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=13 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
@@ -6,6 +6,7 @@
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="5_f7l6s"]
 [ext_resource type="Script" path="res://Levels/Level1/lava.gd" id="5_u5umi"]
+[ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
@@ -102,6 +103,7 @@ environment = ExtResource("4_1uty1")
 
 [node name="Portal" parent="." instance=ExtResource("5_f7l6s")]
 transform = Transform3D(0.715, 0, 0, 0, 0.715, 0, 0, 0, 0.715, -1.456, 1.959, -20.326)
+next_level = ExtResource("6_wen7k")
 
 [node name="Lava" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
