@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295418, 0)
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_0cuco")
 interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
 object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
