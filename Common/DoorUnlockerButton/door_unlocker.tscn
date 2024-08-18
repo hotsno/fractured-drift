@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgswa65021rmf"]
+
+[ext_resource type="Script" path="res://Common/DoorUnlockerButton/DoorUnlocker.gd" id="1_65prp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mkyim"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvn1m"]
+albedo_color = Color(0.500741, 3.73013e-07, 1.92523e-07, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_66ly6"]
+material = SubResource("StandardMaterial3D_kvn1m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxcgu"]
+
+[node name="DoorUnlocker" type="Node3D"]
+script = ExtResource("1_65prp")
+
+[node name="BottomPlate" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.319478, 0, 0, 0, 0.0244087, 0, 0, 0, 0.302239, 0, 0.0259571, 0)
+mesh = SubResource("BoxMesh_mkyim")
+
+[node name="RedButton" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.304133, 0, 0, 0, 0.0114592, 0, 0, 0, 0.302626, 0, 0.0497764, 0)
+mesh = SubResource("CylinderMesh_66ly6")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.337, 0, 0, 0, 0.025, 0, 0, 0, 0.319, 0, 0.0259571, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1.67026, 0, 0, 0, 1, 0, 1.41821, 0)
+shape = SubResource("BoxShape3D_lxcgu")
