@@ -1,11 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtjoamt8pwng5"]
+[gd_scene load_steps=14 format=3 uid="uid://dtjoamt8pwng5"]
 
 [ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
+[ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
+[ext_resource type="Script" path="res://UI/StartMenu/main_buttons.gd" id="2_cjabl"]
 [ext_resource type="Texture2D" uid="uid://dga116ndev43d" path="res://Assets/Art/StartMenu.jpeg" id="2_f7r4l"]
 [ext_resource type="Script" path="res://UI/StartMenu/credits.gd" id="4_2j832"]
 [ext_resource type="Theme" uid="uid://ckv5ly7n67jgl" path="res://UI/StartMenu/new_theme.tres" id="4_6ps6e"]
 [ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="4_rsm27"]
+[ext_resource type="StyleBox" uid="uid://cf1gblqbijc2g" path="res://UI/StartMenu/new_style_box_flat.tres" id="5_3kfw8"]
 [ext_resource type="Script" path="res://UI/StartMenu/quit_button.gd" id="5_v247p"]
+[ext_resource type="PackedScene" uid="uid://82f5jnd1cle3" path="res://Levels/Level1/level_1.tscn" id="7_yyohw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_581ay"]
+bg_color = Color(0, 0, 0, 0.47451)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5vmu"]
+font = ExtResource("4_rsm27")
+font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_4o0sv"]
 font = ExtResource("4_rsm27")
@@ -18,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_4fbxi")
 
 [node name="Image" type="TextureRect" parent="."]
@@ -31,15 +51,75 @@ texture = ExtResource("2_f7r4l")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="Control" type="Control" parent="."]
+[node name="StartMessageContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -392.5
+offset_top = -341.325
+offset_right = 392.5
+offset_bottom = -267.325
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_581ay")
+
+[node name="StartMessage" type="Label" parent="StartMessageContainer"]
+layout_mode = 2
+text = "Click anywhere to begin"
+label_settings = SubResource("LabelSettings_d5vmu")
+
+[node name="MainButtons" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_cjabl")
 
-[node name="QuitButton" type="Button" parent="Control"]
+[node name="StartButton" type="Button" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -343.37
+offset_right = 83.0
+offset_bottom = -269.37
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_rsm27")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("5_3kfw8")
+theme_override_styles/disabled_mirrored = ExtResource("5_3kfw8")
+theme_override_styles/disabled = ExtResource("5_3kfw8")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_3kfw8")
+theme_override_styles/hover_pressed = ExtResource("5_3kfw8")
+theme_override_styles/hover_mirrored = ExtResource("5_3kfw8")
+theme_override_styles/hover = ExtResource("5_3kfw8")
+theme_override_styles/pressed_mirrored = ExtResource("5_3kfw8")
+theme_override_styles/pressed = ExtResource("5_3kfw8")
+theme_override_styles/normal_mirrored = ExtResource("5_3kfw8")
+theme_override_styles/normal = ExtResource("5_3kfw8")
+text = "Start"
+script = ExtResource("1_o7xcx")
+first_scene = ExtResource("7_yyohw")
+
+[node name="QuitButton" type="Button" parent="MainButtons"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -57,7 +137,7 @@ theme = ExtResource("4_6ps6e")
 text = "Quit"
 script = ExtResource("5_v247p")
 
-[node name="CreditsButton" type="Button" parent="Control"]
+[node name="CreditsButton" type="Button" parent="MainButtons"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -95,10 +175,6 @@ offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Credits/PanelContainer"]
-layout_mode = 2
-color = Color(0, 0, 0, 0.156863)
-
 [node name="CreditsLabel" type="Label" parent="Credits/PanelContainer"]
 layout_mode = 2
 text = "Made by Kurasaki, Miyazaki, and hotsugano using Godot"
@@ -116,8 +192,11 @@ offset_top = -93.0
 offset_right = 220.0
 offset_bottom = -50.0
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("4_6ps6e")
 text = "Back"
 
-[connection signal="pressed" from="Control/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainButtons/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainButtons/CreditsButton" to="MainButtons" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits/BackButton" to="Credits" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/BackButton" to="MainButtons" method="_on_back_button_pressed"]
