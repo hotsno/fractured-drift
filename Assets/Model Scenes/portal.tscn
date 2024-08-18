@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://bqyyjsl2ydn20"]
+[gd_scene load_steps=10 format=4 uid="uid://bqyyjsl2ydn20"]
+
+[ext_resource type="Script" path="res://Assets/Model Scenes/portal.gd" id="1_3k3xc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxa4d"]
 resource_name = "Material"
@@ -108,7 +110,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_34o83")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_auhr0"]
+size = Vector3(6.8252, 7.74658, 0.519531)
+
 [node name="Portal" type="Node3D"]
+script = ExtResource("1_3k3xc")
 
 [node name="PortalBorder" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_f0n0a")
@@ -118,3 +124,9 @@ skeleton = NodePath("")
 transform = Transform3D(3.55147, 0, 0, 0, 0, -6.44398, 0, 1, 0, 0, 5.11736, 0)
 mesh = SubResource("ArrayMesh_3n3oo")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.70581, 0)
+shape = SubResource("BoxShape3D_auhr0")
