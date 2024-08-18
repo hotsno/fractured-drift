@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295418, 0)
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_0cuco")
 interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
 object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
@@ -41,6 +41,7 @@ script = ExtResource("2_drhgb")
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(2.33, 0, 0, 0, 2.33, 0, 0, 0, 2.33, 0, 0, 0)
 target_position = Vector3(0, 0, -13.73)
+collision_mask = 2
 
 [node name="ObjectHoldingPoint" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.6008)

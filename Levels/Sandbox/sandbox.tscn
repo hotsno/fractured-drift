@@ -37,11 +37,12 @@ environment = SubResource("Environment_4k1c3")
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ie2my")
 use_collision = true
+collision_layer = 7
 collision_mask = 0
 size = Vector3(34.5371, 0.001, 32.9307)
 
 [node name="Player" parent="." instance=ExtResource("1_nd88y")]
-collision_layer = 2
+collision_mask = 7
 
 [node name="BlockDispenser" parent="." instance=ExtResource("2_407qt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
