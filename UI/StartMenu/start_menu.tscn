@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtjoamt8pwng5"]
+[gd_scene load_steps=8 format=3 uid="uid://dtjoamt8pwng5"]
 
 [ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
-[ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
-[ext_resource type="PackedScene" uid="uid://6x8jmhi5pj3" path="res://Levels/Sandbox/sandbox.tscn" id="2_ako83"]
-[ext_resource type="Script" path="res://UI/StartMenu/main_buttons.gd" id="2_cjabl"]
 [ext_resource type="Texture2D" uid="uid://dga116ndev43d" path="res://Assets/Art/StartMenu.jpeg" id="2_f7r4l"]
 [ext_resource type="Script" path="res://UI/StartMenu/credits.gd" id="4_2j832"]
+[ext_resource type="Theme" uid="uid://ckv5ly7n67jgl" path="res://UI/StartMenu/new_theme.tres" id="4_6ps6e"]
 [ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="4_rsm27"]
 [ext_resource type="Script" path="res://UI/StartMenu/quit_button.gd" id="5_v247p"]
 
@@ -22,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4fbxi")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Image" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,35 +31,45 @@ texture = ExtResource("2_f7r4l")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="MainButtons" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -50.5
-offset_right = 31.5
-offset_bottom = 50.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_cjabl")
 
-[node name="StartButton" type="Button" parent="MainButtons"]
-layout_mode = 2
-text = "Start"
-script = ExtResource("1_o7xcx")
-first_scene = ExtResource("2_ako83")
-
-[node name="CreditsButton" type="Button" parent="MainButtons"]
-layout_mode = 2
-text = "Credits"
-
-[node name="QuitButton" type="Button" parent="MainButtons"]
-layout_mode = 2
+[node name="QuitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -93.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_6ps6e")
 text = "Quit"
 script = ExtResource("5_v247p")
+
+[node name="CreditsButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -93.0
+offset_right = 318.0
+offset_bottom = -50.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_6ps6e")
+text = "Credits"
 
 [node name="Credits" type="Control" parent="."]
 visible = false
@@ -73,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_2j832")
 
-[node name="CreditsLabel" type="Label" parent="Credits"]
+[node name="PanelContainer" type="PanelContainer" parent="Credits"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,11 +89,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -530.0
-offset_top = -63.5
+offset_top = -89.0
 offset_right = 530.0
-offset_bottom = 63.5
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Credits/PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="CreditsLabel" type="Label" parent="Credits/PanelContainer"]
+layout_mode = 2
 text = "Made by Kurasaki, Miyazaki, and hotsugano using Godot"
 label_settings = SubResource("LabelSettings_4o0sv")
 horizontal_alignment = 1
@@ -93,20 +108,16 @@ autowrap_mode = 2
 
 [node name="BackButton" type="Button" parent="Credits"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.5
-offset_top = -53.475
-offset_right = 22.5
-offset_bottom = -22.475
-grow_horizontal = 2
+offset_left = 50.0
+offset_top = -93.0
+offset_right = 220.0
+offset_bottom = -50.0
 grow_vertical = 0
+theme = ExtResource("4_6ps6e")
 text = "Back"
 
-[connection signal="pressed" from="MainButtons/CreditsButton" to="MainButtons" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MainButtons/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="Credits/BackButton" to="MainButtons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits/BackButton" to="Credits" method="_on_back_button_pressed"]
