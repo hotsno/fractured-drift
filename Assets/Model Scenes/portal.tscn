@@ -110,13 +110,11 @@ shadow_mesh = SubResource("ArrayMesh_34o83")
 
 [node name="Portal" type="Node3D"]
 
-[node name="Portal2" type="Node3D" parent="."]
-
-[node name="PortalBorder" type="MeshInstance3D" parent="Portal2"]
+[node name="PortalBorder" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_f0n0a")
 skeleton = NodePath("")
 
-[node name="Portal" type="MeshInstance3D" parent="Portal2"]
+[node name="Portal" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.55147, 0, 0, 0, 0, -6.44398, 0, 1, 0, 0, 5.11736, 0)
 mesh = SubResource("ArrayMesh_3n3oo")
 skeleton = NodePath("")
