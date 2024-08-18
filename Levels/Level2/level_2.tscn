@@ -95,11 +95,9 @@ shape = SubResource("BoxShape3D_6dpf6")
 [node name="SquareTerrainFloor1" parent="." instance=ExtResource("6_bajjh")]
 transform = Transform3D(0.317687, 0, 0, 0, 0.317687, 0, 0, 0, 0.317687, 0.463482, 4.78077, -10.9483)
 
-[node name="BlockDispenser2" parent="." instance=ExtResource("6_spurv")]
-transform = Transform3D(0.994724, 0, -0.102584, 0, 1, 0, 0.102584, 0, 0.994724, -4.70453, 1.91872, 1.06526)
-
 [node name="BlockDispenser3" parent="." instance=ExtResource("6_spurv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65196, 1.90909, 0.844048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43549, 2.31818, 3.41295)
 
 [node name="FlatGround" parent="." instance=ExtResource("7_dkulb")]
 transform = Transform3D(2.29556, 0, 0, 0, 1, 0, 0, 0, 2.79704, -0.118936, 1.41046, -6.15515)
+
