@@ -30,10 +30,7 @@ var pull_power = 4
 @export var head_path: NodePath
 @export var camera_path: NodePath
 
-@export var spawn_location: Vector3
-
 func _ready():
-	move_to_spawn_location()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
@@ -123,5 +120,3 @@ func _pick_object():
 func _drop_object():
 	if picked_object:
 		picked_object = null
-func move_to_spawn_location():
-	self.position = spawn_location

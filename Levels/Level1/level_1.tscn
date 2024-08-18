@@ -1,24 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=10 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="5_f7l6s"]
-[ext_resource type="Script" path="res://Levels/Level1/lava.gd" id="5_u5umi"]
 [ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
-size = Vector3(20.46, 0.14, 7.53)
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qnlcj"]
-emission_enabled = true
-emission = Color(0.947157, 0.16229, 0, 1)
-emission_energy_multiplier = 36.35
-
-[sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
-size = Vector3(20.46, 0.14, 7.53)
+[ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="7_cmiqr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)
@@ -84,7 +73,7 @@ transform = Transform3D(0.0677629, 0.0631658, -2.59029, -0.0700283, 1.93123, 0.0
 transform = Transform3D(-0.146695, -0.881783, -0.191214, 0.116961, 0.048557, -2.64333, 0.971042, -0.139059, 0.289499, 0.259088, 0.908031, -29.1299)
 
 [node name="Player" parent="." instance=ExtResource("2_xfy54")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 0.935791, 4.16866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 1.98891, 9.914)
 
 [node name="SlantedGround1" parent="." instance=ExtResource("3_etrhe")]
 transform = Transform3D(-2.66528e-08, 0, -0.609745, 0, 0.609745, 0, 0.609745, 0, -2.66528e-08, -0.210231, 1.03383, 3.55542)
@@ -105,26 +94,7 @@ environment = ExtResource("4_1uty1")
 transform = Transform3D(0.715, 0, 0, 0, 0.715, 0, 0, 0, 0.715, -1.456, 1.959, -20.326)
 next_level = ExtResource("6_wen7k")
 
-[node name="Lava" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
-
-[node name="Area3D" type="Area3D" parent="Lava"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172676, 0)
-script = ExtResource("5_u5umi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/Area3D"]
-shape = SubResource("BoxShape3D_eulps")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lava"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava/StaticBody3D"]
-material_override = SubResource("ORMMaterial3D_qnlcj")
-cast_shadow = 0
-mesh = SubResource("BoxMesh_nuwb3")
-skeleton = NodePath("../../Area3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/StaticBody3D"]
-shape = SubResource("BoxShape3D_eulps")
+[node name="Lava" parent="." instance=ExtResource("7_cmiqr")]
 
 [node name="BlockDispenser" parent="." instance=ExtResource("7_055dj")]
 transform = Transform3D(1, 0, 0, 0, 0.999043, 0.0437414, 0, -0.0437414, 0.999043, -4.32117, 0.281165, 0.00126821)

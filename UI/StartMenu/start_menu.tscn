@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtjoamt8pwng5"]
+[gd_scene load_steps=10 format=3 uid="uid://dtjoamt8pwng5"]
 
 [ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
 [ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
 [ext_resource type="PackedScene" uid="uid://6x8jmhi5pj3" path="res://Levels/Sandbox/sandbox.tscn" id="2_ako83"]
 [ext_resource type="Script" path="res://UI/StartMenu/main_buttons.gd" id="2_cjabl"]
+[ext_resource type="Texture2D" uid="uid://dga116ndev43d" path="res://Assets/Art/StartMenu.jpeg" id="2_f7r4l"]
 [ext_resource type="Script" path="res://UI/StartMenu/credits.gd" id="4_2j832"]
 [ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="4_rsm27"]
 [ext_resource type="Script" path="res://UI/StartMenu/quit_button.gd" id="5_v247p"]
@@ -20,6 +21,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4fbxi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f7r4l")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1

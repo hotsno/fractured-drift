@@ -7,4 +7,4 @@ func _ready():
 
 func on_body_entered(body):
 	if body and body.name == "Player":
-		get_tree().change_scene_to_packed(next_level)
+		get_tree().call_deferred("change_scene_to_packed", next_level)
