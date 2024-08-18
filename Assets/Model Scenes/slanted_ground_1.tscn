@@ -41,6 +41,7 @@ shader_parameter/normal_map = SubResource("NoiseTexture2D_5ke55")
 [node name="SlantedGround1" instance=ExtResource("1_jw6lq")]
 
 [node name="Ground" parent="." index="0"]
+layers = 7
 material_override = SubResource("ShaderMaterial_h3gxd")
 
 [node name="StaticBody3D" parent="Ground" index="0"]
