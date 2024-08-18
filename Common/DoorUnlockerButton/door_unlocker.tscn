@@ -25,6 +25,7 @@ axis_lock_angular_z = true
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_65prp")
+red_button_path = NodePath("Node3D/RedButton")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.965, 0, 0, 0, 0.965, 0, 0, 0, 0.965, 0, 0.224327, 0)
