@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgswa65021rmf"]
+[gd_scene load_steps=6 format=3 uid="uid://cgswa65021rmf"]
 
 [ext_resource type="Script" path="res://Common/DoorUnlockerButton/DoorUnlocker.gd" id="1_65prp"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbe1u"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f2eb5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ga2s"]
+size = Vector3(1, 0.46875, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mkyim"]
 
@@ -14,45 +13,36 @@ albedo_color = Color(0.500741, 3.73013e-07, 1.92523e-07, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_66ly6"]
 material = SubResource("StandardMaterial3D_kvn1m")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ga2s"]
-size = Vector3(1, 0.46875, 1)
-
 [node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 3
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-physics_material_override = SubResource("PhysicsMaterial_cbe1u")
 contact_monitor = true
-max_contacts_reported = 5
+max_contacts_reported = 3
 script = ExtResource("1_65prp")
+red_button_path = NodePath("Node3D/RedButton")
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0, 0.0259571, 0)
-collision_layer = 7
-collision_mask = 7
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.965, 0, 0, 0, 0.965, 0, 0, 0, 0.965, 0, 0.224327, 0)
+shape = SubResource("BoxShape3D_7ga2s")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432011, 0)
-shape = SubResource("BoxShape3D_f2eb5")
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.86, 0, 0, 0, 0.86, 0, 0, 0, 0.86, 0, 0.0259571, 0)
 
-[node name="Node3D" type="Node3D" parent="Area3D"]
-
-[node name="BottomPlate" type="MeshInstance3D" parent="Area3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.246443, 0, 0, 0, 1, 0, 0.0259571, 0)
+[node name="BottomPlate" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.157646, 0, 0, 0, 1, 0, 0.0259571, 0)
 mesh = SubResource("BoxMesh_mkyim")
 skeleton = NodePath("")
 
-[node name="RedButton" type="MeshInstance3D" parent="Area3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.17317, 0, 0, 0, 1, 0, 0.238997, 0)
+[node name="RedButton" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.0731894, 0, 0, 0, 1, 0, 0.186304, 0)
 mesh = SubResource("CylinderMesh_66ly6")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, 0, 0.129223, 0)
-shape = SubResource("BoxShape3D_7ga2s")
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

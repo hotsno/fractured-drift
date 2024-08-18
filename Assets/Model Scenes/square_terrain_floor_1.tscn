@@ -93,11 +93,13 @@ offsets = PackedFloat32Array(0.00819672, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fr7qm"]
 gradient = SubResource("Gradient_sx0jx")
 fill_from = Vector2(0, 1)
-fill_to = Vector2(0.811828, 0.198925)
+fill_to = Vector2(0.715054, 0.0913979)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7lqdt"]
+fractal_octaves = 8
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s2fa2"]
+as_normal_map = true
 noise = SubResource("FastNoiseLite_7lqdt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_owndv"]
