@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btncy63q2qbn1"]
+[gd_scene load_steps=9 format=3 uid="uid://btncy63q2qbn1"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_s2wiu"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_vwnep"]
 [ext_resource type="PackedScene" uid="uid://bqpljm7vvrkmg" path="res://Assets/Model Exports/SquareTerrainFloor1.glb" id="6_bajjh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
+[ext_resource type="PackedScene" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)
@@ -67,9 +68,6 @@ transform = Transform3D(-1.312, 2.88365, 0.441537, 0.579488, 6.81242, 0.11464, -
 [node name="Player" parent="." instance=ExtResource("2_lx38d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 4.18283, 9.25726)
 
-[node name="SlantedGround1" parent="." instance=ExtResource("3_bbp1t")]
-transform = Transform3D(-4.49071e-08, 0, -1.63399, 0, 0.609745, 0, 1.02735, 0, -7.14238e-08, -0.460959, 1.67841, -5.81054)
-
 [node name="SlantedGround2" parent="." instance=ExtResource("3_bbp1t")]
 transform = Transform3D(3.69132e-07, 0, 1.63399, 0, 0.609745, 0, -2.81492, 0, 2.14271e-07, -0.210222, 3.66979, -66.6321)
 
@@ -98,4 +96,7 @@ shape = SubResource("BoxShape3D_6dpf6")
 transform = Transform3D(0.317687, 0, 0, 0, 0.317687, 0, 0, 0, 0.317687, 0.463482, 4.78077, -10.9483)
 
 [node name="BlockDispenser3" parent="." instance=ExtResource("6_spurv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43549, 2.31818, 3.41295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43549, 1.90022, 0.214885)
+
+[node name="FlatGround" parent="." instance=ExtResource("7_dkulb")]
+transform = Transform3D(2.29556, 0, 0, 0, 1, 0, 0, 0, 2.79704, -0.118936, 1.41046, -6.15515)
