@@ -150,6 +150,8 @@ transform = Transform3D(2.21507, 0, 0, 0, 0.72545, 0, 0, 0, 6.85397, 5.41801, -0
 
 [node name="Player" parent="." instance=ExtResource("2_cm0vt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59143, 0.745418, -16.2287)
+max_block_size = 5
+mix_block_size = 0.1
 
 [node name="SquareTerrainFloor1" parent="." instance=ExtResource("8_rbfmu")]
 transform = Transform3D(0.207605, 0, -0.086252, 0, 0.22481, 0, 0.086252, 0, 0.207605, -1.05294, 3.09572, -6.06587)
