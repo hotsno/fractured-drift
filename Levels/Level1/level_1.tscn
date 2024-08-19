@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Levels/Level1/level_1.gd" id="1_mp5n3"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
-[ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
+[ext_resource type="Environment" uid="uid://c0gaxnq4d5fsy" path="res://Assets/Environments/level_3.tres" id="5_5wldn"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="5_f7l6s"]
 [ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
@@ -95,7 +95,7 @@ transform = Transform3D(-6.15221e-07, 0, -0.609745, 0, 0.609745, 0, 2.81492, 0, 
 transform = Transform3D(7.99584e-08, 0, 0.609745, 0, 0.609745, 0, -0.609745, 0, 7.99584e-08, -0.210228, 1.03383, -16.763)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_1uty1")
+environment = ExtResource("5_5wldn")
 
 [node name="Portal" parent="." instance=ExtResource("5_f7l6s")]
 transform = Transform3D(0.715, 0, 0, 0, 0.715, 0, 0, 0, 0.715, -1.456, 1.959, -20.326)
