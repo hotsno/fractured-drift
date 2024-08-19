@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal clicked_on_selecatable_object
+
 var speed
 var speed_multiplier = 1.0
 const WALK_SPEED = 5.0
@@ -109,20 +111,33 @@ func _run_resize_object_logic():
 
 
 func _run_pickup_object_logic():
-	if picked_object:
+	if picked_object and is_instance_valid(picked_object):
 		var a = picked_object.global_position
 		var b = object_holding_point.global_position
+
+		#interaction_raycast.set_collision_mask_value(2, false)
+		#var floor: Node3D = interaction_raycast.get_collider()
+		# TODO: IF THE object_holding_point IS IN TERRAIN, OVERRIDE IT TO BE ON TOP OF THE TERRAIN
+		#interaction_raycast.set_collision_mask_value(2, true)
+
 		picked_object.set_linear_velocity((b - a) * pull_power)
+	elif not is_instance_valid(picked_object):
+		picked_object = null
+
 func _pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider and collider.is_in_group("ResizeableObjects"):
 		picked_object = collider
+		clicked_on_selecatable_object.emit(picked_object)
+
 		picked_object.set_collision_layer_value(2, false)
 		picked_object.set_collision_mask_value(1, false)
 		picked_object.set_collision_mask_value(2, false)
 		picked_object.set_collision_mask_value(3, false)
+
 func _drop_object():
 	if picked_object:
+		clicked_on_selecatable_object.emit(picked_object)
 		picked_object.set_collision_layer_value(2, true)
 		picked_object.set_collision_mask_value(1, true)
 		picked_object.set_collision_mask_value(2, true)
