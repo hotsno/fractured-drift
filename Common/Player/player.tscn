@@ -13,8 +13,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295418, 0)
 collision_mask = 7
 script = ExtResource("1_0cuco")
-max_block_size = null
-mix_block_size = null
 interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
 floor_raycast_path = NodePath("Head/Camera3D/RayCast3D")
 object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
@@ -62,7 +60,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+metadata/_edit_use_anchors_ = true
 
 [node name="Crosshair" parent="UIRoot" instance=ExtResource("5_wslm0")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="clicked_on_selecatable_object" from="." to="Head/Camera3D/Wand" method="_on_player_clicked_on_selecatable_object"]
