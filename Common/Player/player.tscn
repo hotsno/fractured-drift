@@ -13,7 +13,10 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295418, 0)
 collision_mask = 7
 script = ExtResource("1_0cuco")
+max_block_size = null
+mix_block_size = null
 interaction_raycast_path = NodePath("Head/Camera3D/InteractionRaycast")
+floor_raycast_path = NodePath("Head/Camera3D/RayCast3D")
 object_holding_point_path = NodePath("Head/Camera3D/ObjectHoldingPoint")
 interact_timer_path = NodePath("InteractCooldownTimer")
 head_path = NodePath("Head")
@@ -45,6 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.6008)
 
 [node name="Wand" parent="Head/Camera3D" instance=ExtResource("2_uydla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, -0.416, -0.52)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -7.5)
+collision_mask = 4
 
 [node name="InteractCooldownTimer" type="Timer" parent="."]
 wait_time = 0.05

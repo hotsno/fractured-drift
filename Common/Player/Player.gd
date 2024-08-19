@@ -24,9 +24,11 @@ var gravity = 15
 @onready var camera: Node3D = get_node(camera_path)
 
 @export var interaction_raycast_path: NodePath
+@export var floor_raycast_path: NodePath
 @export var object_holding_point_path: NodePath
 @export var interact_timer_path: NodePath
 @onready var interaction_raycast: RayCast3D = get_node(interaction_raycast_path)
+@onready var floor_raycast: RayCast3D = get_node(floor_raycast_path)
 @onready var object_holding_point: Marker3D = get_node(object_holding_point_path)
 @onready var interact_timer: Timer = get_node(interact_timer_path)
 
@@ -124,7 +126,16 @@ func _run_pickup_object_logic():
 		# TODO: IF THE object_holding_point IS IN TERRAIN, OVERRIDE IT TO BE ON TOP OF THE TERRAIN
 		#interaction_raycast.set_collision_mask_value(2, true)
 
-		picked_object.set_linear_velocity((b - a) * pull_power)
+		var floor_raycast_collider = floor_raycast.get_collider()
+
+		if not floor_raycast_collider:
+			picked_object.set_linear_velocity((b - a) * pull_power)
+
+		else:
+			var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
+			picked_object.set_linear_velocity((floor_raycast.get_collision_point() - a
+			+ Vector3(0, 2 + mesh.get_aabb().get_longest_axis_size(), 0)) * pull_power)
+
 	elif not is_instance_valid(picked_object):
 		picked_object = null
 

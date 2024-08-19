@@ -40,6 +40,7 @@ shader_parameter/normal_map = SubResource("NoiseTexture2D_6qgrq")
 [node name="FlatGround" type="Node3D"]
 
 [node name="FlatGround" type="StaticBody3D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlatGround"]
 shape = SubResource("BoxShape3D_npx1s")

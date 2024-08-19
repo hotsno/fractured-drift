@@ -37,4 +37,5 @@ shader_parameter/normal_map = SubResource("NoiseTexture2D_lmv1g")
 [node name="TerrainWall2" instance=ExtResource("1_blnho")]
 
 [node name="Cube" parent="." index="0"]
+layers = 5
 material_override = SubResource("ShaderMaterial_80rov")
