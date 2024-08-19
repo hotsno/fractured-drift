@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_s2wiu"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_bbp1t"]
-[ext_resource type="Environment" uid="uid://4nvowshppgfe" path="res://Assets/Environments/level_2.tres" id="4_h7jyh"]
+[ext_resource type="Environment" uid="uid://cny7hm4p2yh8l" path="res://Assets/Environments/level_2.tres" id="4_h7jyh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="8_0bglh"]

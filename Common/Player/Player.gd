@@ -45,7 +45,7 @@ func _unhandled_input(event):
 		head.rotation.y = y_rotation
 
 		var x_offset = -event.relative.y * SENSITIVITY
-		var x_rotation = clamp(camera.rotation.x + x_offset, deg_to_rad(-40), deg_to_rad(60))
+		var x_rotation = clamp(camera.rotation.x + x_offset, deg_to_rad(-80), deg_to_rad(80))
 		camera.rotation.x = x_rotation
 
 func _physics_process(delta):
