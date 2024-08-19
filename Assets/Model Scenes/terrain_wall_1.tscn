@@ -46,6 +46,3 @@ shader_parameter/normal_map = SubResource("NoiseTexture2D_tabun")
 
 [node name="Terrain1" parent="." index="0"]
 material_override = SubResource("ShaderMaterial_5y88c")
-
-[node name="@StaticBody3D@17259" parent="." index="1"]
-collision_layer = 5

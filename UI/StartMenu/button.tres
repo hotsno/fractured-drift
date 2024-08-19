@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://y6jib30ol6ed"]
+
+[ext_resource type="FontFile" uid="uid://farwipvvrsq1" path="res://Assets/Fonts/SuperCorn.ttf" id="1_lmqi7"]
+[ext_resource type="StyleBox" uid="uid://cf1gblqbijc2g" path="res://UI/StartMenu/new_style_box_flat.tres" id="2_qd4kc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdm1f"]
+content_margin_left = 4.0
+content_margin_top = 10.0
+content_margin_right = 4.0
+content_margin_bottom = 10.0
+bg_color = Color(0.141176, 0.141176, 0.141176, 0.901961)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_lmqi7")
+Button/styles/disabled = ExtResource("2_qd4kc")
+Button/styles/focus = ExtResource("2_qd4kc")
+Button/styles/hover = SubResource("StyleBoxFlat_pdm1f")
+Button/styles/normal = ExtResource("2_qd4kc")
+Button/styles/pressed = ExtResource("2_qd4kc")
