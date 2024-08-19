@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkduegfstgnmr" path="res://Assets/Model Exports/TerrainWall1.glb" id="4_6gbmu"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_ogr06"]
 [ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="5_suyx3"]
-[ext_resource type="PackedScene" uid="uid://bgh5sndfkjrok" path="res://Assets/Model Scenes/flat_ground.tscn" id="6_ftavx"]
+[ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="6_ftavx"]
 
 [node name="Level3" type="Node3D"]
 
