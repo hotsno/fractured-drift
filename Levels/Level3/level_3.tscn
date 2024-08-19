@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfop345o0gxn3"]
+
+[ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_cm0vt"]
+[ext_resource type="PackedScene" uid="uid://dkduegfstgnmr" path="res://Assets/Model Exports/TerrainWall1.glb" id="4_6gbmu"]
+[ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_ogr06"]
+[ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="5_suyx3"]
+[ext_resource type="PackedScene" uid="uid://bgh5sndfkjrok" path="res://Assets/Model Scenes/flat_ground.tscn" id="6_ftavx"]
+
+[node name="Level3" type="Node3D"]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.00437468, -0.977818, -0.20941, -0.0689102, -0.209209, 0.97544, -0.997613, 0.0101631, -0.0682968, 0.573872, 2.01453, 2.86283)
+light_color = Color(0.8363, 0.624958, 0.581272, 1)
+light_energy = 10.0
+light_indirect_energy = 0.3
+light_volumetric_fog_energy = 2.0
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_cm0vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.805, 0.676602, 7.12)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_ogr06")
+
+[node name="FlatGround" parent="." instance=ExtResource("6_ftavx")]
+transform = Transform3D(6.84691, 0, 0, 0, 1, 0, 0, 0, 4.73315, 0, 0, -29.2785)
+
+[node name="TerrainWall1" parent="." instance=ExtResource("4_6gbmu")]
+transform = Transform3D(0.166797, 0, 1.66667, 0, 1.675, 0, -1.66667, 0, 0.166797, 0.939928, 2.23251, 17.6047)
+
+[node name="TerrainWall2" parent="." instance=ExtResource("4_6gbmu")]
+transform = Transform3D(0.166797, 0, 1.66667, 0, 1.675, 0, -1.66667, 0, 0.166797, -14.0678, 2.23251, 16.1027)
+
+[node name="TerrainWall3" parent="." instance=ExtResource("4_6gbmu")]
+transform = Transform3D(0.166797, 0, 1.66667, 0, 1.675, 0, -1.66667, 0, 0.166797, -27.435, 2.23251, 14.765)
+
+[node name="TerrainWall4" parent="." instance=ExtResource("4_6gbmu")]
+transform = Transform3D(0.166797, 0, 1.66667, 0, 1.675, 0, -1.66667, 0, 0.166797, 17.2964, 2.23251, 19.2416)
+
+[node name="Block" parent="." instance=ExtResource("5_suyx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.645, 4.039, -6.096)
