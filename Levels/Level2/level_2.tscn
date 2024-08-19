@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_s2wiu"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_bbp1t"]
-[ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_vwnep"]
+[ext_resource type="Environment" uid="uid://4nvowshppgfe" path="res://Assets/Environments/level_2.tres" id="4_h7jyh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="8_0bglh"]
@@ -14,7 +14,7 @@
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.00437468, -0.977818, -0.20941, -0.0689102, -0.209209, 0.97544, -0.997613, 0.0101631, -0.0682968, 0.573872, 2.01453, 2.86283)
+transform = Transform3D(0.00437471, -0.977818, -0.209411, -0.0689104, -0.209209, 0.97544, -0.997613, 0.0101632, -0.068297, 0, 0, 0)
 light_color = Color(0.8363, 0.624958, 0.581272, 1)
 light_energy = 10.0
 light_indirect_energy = 0.3
@@ -79,7 +79,7 @@ transform = Transform3D(-6.15221e-07, 0, -1.63399, 0, 0.609745, 0, 2.81492, 0, -
 transform = Transform3D(7.99584e-08, 0, 1.63399, 0, 0.609745, 0, -0.609745, 0, 2.14271e-07, -0.210227, 1.53195, -21.5922)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_vwnep")
+environment = ExtResource("4_h7jyh")
 
 [node name="BlockDispenser3" parent="." instance=ExtResource("6_spurv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684537, 1.90022, -2.09037)
