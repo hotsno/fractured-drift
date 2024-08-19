@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dmpf1ksqe41gs"]
+[gd_scene load_steps=9 format=4 uid="uid://dmpf1ksqe41gs"]
 
 [ext_resource type="Script" path="res://Common/Tools/Wand.gd" id="1_pgvif"]
 
@@ -33,10 +33,26 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ph34n"]
+resource_name = "Walking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.174533, 0.0872665, 0.174533), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pko2n"]
 _data = {
 "Interact": SubResource("Animation_3fohl"),
-"RESET": SubResource("Animation_rmoua")
+"RESET": SubResource("Animation_rmoua"),
+"Walking": SubResource("Animation_ph34n")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp5qa"]
