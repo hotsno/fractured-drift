@@ -175,7 +175,10 @@ grow_vertical = 2
 
 [node name="CreditsLabel" type="Label" parent="Credits/PanelContainer"]
 layout_mode = 2
-text = "Made by Kurasaki, Miyazaki, and hotsugano using Godot"
+text = "Made by Kurasaki, Miyazaki, and hotsugano using Godot.
+
+Start menu art by:
+@youknow_yunoo on IG"
 label_settings = SubResource("LabelSettings_4o0sv")
 horizontal_alignment = 1
 autowrap_mode = 2
