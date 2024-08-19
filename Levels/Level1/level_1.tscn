@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=11 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
 [ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="7_cmiqr"]
+[ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="9_tiosi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)
@@ -106,3 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00931, 0, -6.12085)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127098, 0.410919, 0)
 shape = SubResource("BoxShape3D_6dpf6")
+
+[node name="Block" parent="." instance=ExtResource("9_tiosi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20466, 2.45928, -0.79128)

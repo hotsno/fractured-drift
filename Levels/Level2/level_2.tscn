@@ -6,7 +6,7 @@
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_vwnep"]
 [ext_resource type="PackedScene" uid="uid://bqpljm7vvrkmg" path="res://Assets/Model Exports/SquareTerrainFloor1.glb" id="6_bajjh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
-[ext_resource type="PackedScene" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
+[ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)

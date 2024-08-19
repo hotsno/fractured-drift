@@ -130,15 +130,23 @@ func _pick_object():
 		clicked_on_selecatable_object.emit(picked_object)
 
 		picked_object.set_collision_layer_value(2, false)
+		picked_object.set_collision_layer_value(3, false)
 		picked_object.set_collision_mask_value(1, false)
 		picked_object.set_collision_mask_value(2, false)
 		picked_object.set_collision_mask_value(3, false)
+
+		_make_selected_object_glow(picked_object)
 
 func _drop_object():
 	if picked_object:
 		clicked_on_selecatable_object.emit(picked_object)
 		picked_object.set_collision_layer_value(2, true)
+		picked_object.set_collision_layer_value(3, true)
 		picked_object.set_collision_mask_value(1, true)
 		picked_object.set_collision_mask_value(2, true)
 		picked_object.set_collision_mask_value(3, true)
 		picked_object = null
+
+func _make_selected_object_glow(object: Node3D):
+	var mesh: MeshInstance3D = object.get_node("MeshInstance3D")
+	#mesh.mesh.surface_get_material(0).next_pass.set("shader_parameter/outline_width", 0)
