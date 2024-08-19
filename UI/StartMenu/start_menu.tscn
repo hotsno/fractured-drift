@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtjoamt8pwng5"]
+[gd_scene load_steps=13 format=3 uid="uid://dtjoamt8pwng5"]
 
-[ext_resource type="Script" path="res://UI/StartMenu/start_menu.gd" id="1_4fbxi"]
 [ext_resource type="Script" path="res://UI/StartMenu/start_button.gd" id="1_o7xcx"]
 [ext_resource type="Script" path="res://UI/StartMenu/main_buttons.gd" id="2_cjabl"]
 [ext_resource type="Texture2D" uid="uid://dga116ndev43d" path="res://Assets/Art/StartMenu.jpeg" id="2_f7r4l"]
@@ -38,7 +37,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_4fbxi")
 
 [node name="Image" type="TextureRect" parent="."]
 layout_mode = 1
@@ -88,10 +86,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -83.0
-offset_top = -343.37
-offset_right = 83.0
-offset_bottom = -269.37
+offset_left = -116.0
+offset_top = -343.0
+offset_right = 116.0
+offset_bottom = -269.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 2
@@ -196,7 +194,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("4_6ps6e")
 text = "Back"
 
-[connection signal="pressed" from="MainButtons/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MainButtons/CreditsButton" to="MainButtons" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="Credits/BackButton" to="Credits" method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainButtons/CreditsButton" to="Credits" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits/BackButton" to="MainButtons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/BackButton" to="Credits" method="_on_back_button_pressed"]

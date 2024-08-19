@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://82f5jnd1cle3"]
+[gd_scene load_steps=13 format=3 uid="uid://82f5jnd1cle3"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_l681o"]
+[ext_resource type="Script" path="res://Levels/Level1/level_1.gd" id="1_mp5n3"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_xfy54"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_etrhe"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_1uty1"]
@@ -8,11 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
 [ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="7_cmiqr"]
+[ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="9_6mmie"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)
 
+[sub_resource type="LabelSettings" id="LabelSettings_vuo31"]
+font = ExtResource("9_6mmie")
+font_size = 40
+
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_mp5n3")
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -97,7 +104,7 @@ next_level = ExtResource("6_wen7k")
 [node name="Lava" parent="." instance=ExtResource("7_cmiqr")]
 
 [node name="BlockDispenser" parent="." instance=ExtResource("7_055dj")]
-transform = Transform3D(1, 0, 0, 0, 0.999043, 0.0437414, 0, -0.0437414, 0.999043, -4.32117, 0.281165, 0.00126821)
+transform = Transform3D(1, 0, 0, 0, 0.999725, 0.0234725, 0, -0.0234725, 0.999725, -4.32117, 0.281165, 0.00126821)
 spawn_location = Vector3i(5, 5, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -106,3 +113,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00931, 0, -6.12085)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127098, 0.410919, 0)
 shape = SubResource("BoxShape3D_6dpf6")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Text" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -489.5
+offset_top = -156.125
+offset_right = 489.5
+offset_bottom = -106.125
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stand on the pressure plate to spawn a block."
+label_settings = SubResource("LabelSettings_vuo31")
+
+[connection signal="object_dropped" from="Player" to="." method="_on_player_object_dropped"]
+[connection signal="object_picked" from="Player" to="." method="_on_player_object_picked"]
+[connection signal="object_resized" from="Player" to="." method="_on_player_object_resized"]
+[connection signal="stepped_on" from="BlockDispenser" to="." method="_on_block_dispenser_stepped_on"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://drkbyftyse3xy"]
+[gd_scene load_steps=7 format=3 uid="uid://drkbyftyse3xy"]
 
 [ext_resource type="Script" path="res://Common/Player/Player.gd" id="1_0cuco"]
-[ext_resource type="Script" path="res://Common/Player/Camera.gd" id="2_drhgb"]
 [ext_resource type="PackedScene" uid="uid://dmpf1ksqe41gs" path="res://Common/Tools/wand.tscn" id="2_uydla"]
 [ext_resource type="PackedScene" uid="uid://d0h6oelraxi32" path="res://Common/UI/UIRoot/ui_root.tscn" id="4_3hwe0"]
 [ext_resource type="PackedScene" uid="uid://dnj8tthmj14mg" path="res://Common/UI/Crosshair/crosshair.tscn" id="5_wslm0"]
@@ -35,21 +34,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43601, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
-script = ExtResource("2_drhgb")
 
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(2.33, 0, 0, 0, 2.33, 0, 0, 0, 2.33, 0, 0, 0)
 target_position = Vector3(0, 0, -13.73)
-collision_mask = 2
+collision_mask = 6
 
 [node name="ObjectHoldingPoint" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.6008)
 
-[node name="Wand" parent="Head" instance=ExtResource("2_uydla")]
+[node name="Wand" parent="Head/Camera3D" instance=ExtResource("2_uydla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, -0.416, -0.52)
 
 [node name="InteractCooldownTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="UIRoot" parent="." instance=ExtResource("4_3hwe0")]
 anchors_preset = 8
@@ -60,4 +58,4 @@ anchor_bottom = 0.5
 
 [node name="Crosshair" parent="UIRoot" instance=ExtResource("5_wslm0")]
 
-[connection signal="clicked_on_selecatable_object" from="Head/Camera3D" to="Head/Wand" method="_on_camera_3d_clicked_on_selecatable_object"]
+[connection signal="clicked_on_selecatable_object" from="." to="Head/Camera3D/Wand" method="_on_player_clicked_on_selecatable_object"]
