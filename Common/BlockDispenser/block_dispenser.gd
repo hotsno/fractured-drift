@@ -6,6 +6,7 @@ signal stepped_on
 @export var spawn_location = Vector3i(1, 10, 1)
 var block_instance: Node
 
+
 func _on_pressure_plate_stepped_on():
 	stepped_on.emit()
 	if block_instance:
@@ -14,3 +15,8 @@ func _on_pressure_plate_stepped_on():
 	new_block_instance.position = spawn_location
 	add_child(new_block_instance)
 	self.block_instance = new_block_instance
+	
+	$SoundEffect.play()
+	#$CloudParticles.emitting = true
+	#$CloudParticles.emitting = false
+	$CloudParticles.restart()
