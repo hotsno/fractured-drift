@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btncy63q2qbn1"]
+[gd_scene load_steps=10 format=3 uid="uid://btncy63q2qbn1"]
 
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_s2wiu"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="8_0bglh"]
+[ext_resource type="PackedScene" uid="uid://dfop345o0gxn3" path="res://Levels/Level3/level_3.tscn" id="8_85yq7"]
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_udfo0"]
 
 [node name="Level2" type="Node3D"]
@@ -91,6 +92,7 @@ transform = Transform3D(2.29556, 0, 0, 0, 1, 0, 0, 0, 2.79704, -0.118936, 1.4104
 
 [node name="Portal" parent="." instance=ExtResource("8_0bglh")]
 transform = Transform3D(0.750833, 0, 0, 0, 0.750833, 0, 0, 0, 0.750833, -6.2222, 6.44049, -11.7186)
+next_level = ExtResource("8_85yq7")
 
 [node name="SquareTerrainFloor2" parent="." instance=ExtResource("8_udfo0")]
 transform = Transform3D(0.579796, 0, 0, 0, 0.579796, 0, 0, 0, 0.579796, -6.0406, 3.36998, -10.955)
