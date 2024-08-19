@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+signal object_picked
+signal object_resized
+signal object_dropped
+
 var speed
 var speed_multiplier = 1.0
 const WALK_SPEED = 5.0
@@ -95,12 +99,14 @@ func _input(_event):
 func _run_resize_object_logic():
 	if picked_object:
 		if Input.is_action_pressed("scroll_wheel_up"):
+			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
 			if picked_object.get_node("MeshInstance3D").scale.x <= max_block_size:
 				picked_object.get_node("MeshInstance3D").scale *= 1.1
 				picked_object.get_node("CollisionShape3D").scale *= 1.1
 
 		if Input.is_action_pressed("scroll_wheel_down"):
+			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
 			if picked_object.get_node("MeshInstance3D").scale.x >= mix_block_size:
 				picked_object.get_node("MeshInstance3D").scale *= 0.9
@@ -115,6 +121,7 @@ func _run_pickup_object_logic():
 func _pick_object():
 	var collider = interaction_raycast.get_collider()
 	if collider and collider.is_in_group("ResizeableObjects"):
+		object_picked.emit()
 		picked_object = collider
 		picked_object.set_collision_layer_value(2, false)
 		picked_object.set_collision_mask_value(1, false)
@@ -122,6 +129,7 @@ func _pick_object():
 		picked_object.set_collision_mask_value(3, false)
 func _drop_object():
 	if picked_object:
+		object_dropped.emit()
 		picked_object.set_collision_layer_value(2, true)
 		picked_object.set_collision_mask_value(1, true)
 		picked_object.set_collision_mask_value(2, true)
