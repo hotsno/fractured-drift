@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_bbp1t"]
 [ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_vwnep"]
-[ext_resource type="PackedScene" uid="uid://bqpljm7vvrkmg" path="res://Assets/Model Exports/SquareTerrainFloor1.glb" id="6_bajjh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="8_0bglh"]
+[ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_udfo0"]
 
 [node name="Level2" type="Node3D"]
 
@@ -81,13 +81,6 @@ transform = Transform3D(7.99584e-08, 0, 1.63399, 0, 0.609745, 0, -0.609745, 0, 2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_vwnep")
 
-[node name="BlockDispenser" parent="." instance=ExtResource("6_spurv")]
-transform = Transform3D(1, 0, 0, 0, 0.999043, 0.0437414, 0, -0.0437414, 0.999043, -4.32117, 0.281165, 0.00126821)
-spawn_location = Vector3i(5, 5, 0)
-
-[node name="SquareTerrainFloor1" parent="." instance=ExtResource("6_bajjh")]
-transform = Transform3D(0.579796, 0, 0, 0, 0.579796, 0, 0, 0, 0.579796, -6.0406, 3.36998, -10.955)
-
 [node name="BlockDispenser3" parent="." instance=ExtResource("6_spurv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684537, 1.90022, -2.09037)
 
@@ -96,3 +89,6 @@ transform = Transform3D(2.29556, 0, 0, 0, 1, 0, 0, 0, 2.79704, -0.118936, 1.4104
 
 [node name="Portal" parent="." instance=ExtResource("8_0bglh")]
 transform = Transform3D(0.750833, 0, 0, 0, 0.750833, 0, 0, 0, 0.750833, -6.2222, 6.44049, -11.7186)
+
+[node name="SquareTerrainFloor2" parent="." instance=ExtResource("8_udfo0")]
+transform = Transform3D(0.579796, 0, 0, 0, 0.579796, 0, 0, 0, 0.579796, -6.0406, 3.36998, -10.955)
