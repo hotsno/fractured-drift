@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bqyyjsl2ydn20"]
+[gd_scene load_steps=11 format=4 uid="uid://bqyyjsl2ydn20"]
 
 [ext_resource type="Script" path="res://Assets/Model Scenes/portal.gd" id="1_3k3xc"]
 
@@ -72,11 +72,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_55o4s")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1f2s"]
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.04
+rim_tint = 0.55
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnftl"]
 resource_name = "Material.002"
 cull_mode = 2
 albedo_color = Color(1, 0.603677, 0.59283, 1)
 roughness = 0.0
+emission_enabled = true
+emission = Color(0.954416, 0, 0.21837, 1)
+emission_energy_multiplier = 1.7
+rim_tint = 0.52
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_34o83"]
 _surfaces = [{
@@ -122,6 +131,7 @@ skeleton = NodePath("")
 
 [node name="Portal" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.55147, 0, 0, 0, 0, -6.44398, 0, 1, 0, 0, 5.11736, 0)
+material_overlay = SubResource("StandardMaterial3D_d1f2s")
 mesh = SubResource("ArrayMesh_3n3oo")
 skeleton = NodePath("")
 
