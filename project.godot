@@ -89,3 +89,8 @@ scroll_wheel_down={
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Block"
 3d_physics/layer_3="Wall"
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/use_debanding=true
