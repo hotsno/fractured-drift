@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="1_s2wiu"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="2_lx38d"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="3_bbp1t"]
-[ext_resource type="Environment" uid="uid://cca7wib3ngxg1" path="res://Assets/Environments/level_1.tres" id="4_vwnep"]
+[ext_resource type="Environment" uid="uid://4nvowshppgfe" path="res://Assets/Environments/level_2.tres" id="4_h7jyh"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="6_spurv"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="7_dkulb"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="8_0bglh"]
@@ -14,7 +14,7 @@
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.00437468, -0.977818, -0.20941, -0.0689102, -0.209209, 0.97544, -0.997613, 0.0101631, -0.0682968, 0.573872, 2.01453, 2.86283)
+transform = Transform3D(0.00437471, -0.977818, -0.209411, -0.0689104, -0.209209, 0.97544, -0.997613, 0.0101632, -0.068297, 0, 0, 0)
 light_color = Color(0.8363, 0.624958, 0.581272, 1)
 light_energy = 10.0
 light_indirect_energy = 0.3
@@ -22,49 +22,49 @@ light_volumetric_fog_energy = 2.0
 shadow_enabled = true
 
 [node name="TerrainWall1" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.17766, 0, 0, 0, 2.15681, 0, 0, 0, 2.27228, 18.1481, 1.35299, 13.4194)
+transform = Transform3D(1.17766, 0, 0, 0, 1.47094, 0, 0, 0, 2.27228, 18.1481, 1.35299, 13.4194)
 
 [node name="TerrainWall2" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.42779, 0.216445, -0.340278, -0.12318, 2.78461, -0.103427, 0.210805, 0.161145, 2.24427, 18.4895, -6.71812, -5.67307)
+transform = Transform3D(1.42779, 0.147616, -0.340278, -0.12318, 1.8991, -0.103427, 0.210805, 0.109901, 2.24427, 18.4895, -6.71812, -5.67307)
 
 [node name="TerrainWall3" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.44724, 0.114918, -0.0512798, -0.0527046, 3.25091, -0.114904, 0.0300418, 0.167242, 2.26879, 23.7319, 3.67383, -3.26636)
+transform = Transform3D(1.44724, 0.0783741, -0.0512798, -0.0527046, 2.21712, -0.114904, 0.0300418, 0.114059, 2.26879, 23.7319, 3.67383, -3.26636)
 
 [node name="TerrainWall4" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.13406, 0.0987032, 1.41138, 0.0062705, 2.79222, -0.141215, -0.901145, 0.143644, 1.77519, 22.2188, 2.59596, -11.2553)
+transform = Transform3D(1.13406, 0.0673156, 1.41138, 0.0062705, 1.90429, -0.141215, -0.901145, 0.0979652, 1.77519, 22.2188, 2.59596, -11.2553)
 
 [node name="TerrainWall5" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.12663, 0.401721, 1.78894, -0.136293, 4.56174, -0.121065, -1.43724, -0.117685, 1.4138, -30.4082, -5.63744, -2.93832)
+transform = Transform3D(1.12663, 0.273974, 1.78894, -0.136293, 3.11111, -0.121065, -1.43724, -0.0802612, 1.4138, -30.4082, -5.63744, -2.93832)
 
 [node name="TerrainWall6" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(-1.42779, 0.216445, 0.340278, 0.12318, 2.78461, 0.103427, -0.210805, 0.161145, -2.24427, -31.3482, -0.645225, -43.673)
+transform = Transform3D(-1.42779, 0.147616, 0.340278, 0.12318, 1.8991, 0.103427, -0.210805, 0.109901, -2.24427, -31.3482, -0.645225, -43.673)
 
 [node name="TerrainWall9" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.40762, 0.216445, 0.506474, -0.0903389, 2.78461, -0.16719, -0.329604, 0.161146, 2.20879, 14.1667, 2.70428, -34.4055)
+transform = Transform3D(1.40762, 0.147616, 0.506474, -0.0903389, 1.8991, -0.16719, -0.329604, 0.109902, 2.20879, 14.1667, 2.70428, -34.4055)
 
 [node name="TerrainWall11" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.3112, 0.30727, 4.05032, 0.00787517, 3.9531, -0.476704, -1.89724, 0.228766, 2.79724, -1.20027, 0.610323, -43.2306)
+transform = Transform3D(1.3112, 0.209558, 4.05032, 0.00787517, 2.69601, -0.476704, -1.89724, 0.156018, 2.79724, -1.20027, 0.610323, -43.2306)
 
 [node name="TerrainWall13" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.65615, 0.421106, -3.42033, -0.220729, 5.4176, 0.0591841, 1.58976, 0.313517, 3.57138, 2.69508, 8.10966, 42.1103)
+transform = Transform3D(1.65615, 0.287194, -3.42033, -0.220729, 3.6948, 0.0591841, 1.58976, 0.213819, 3.57138, 2.69508, 8.10966, 42.1103)
 
 [node name="TerrainWall12" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(2.23175, -0.468155, 1.10229, 0.316585, 3.92314, -0.363875, -0.487772, 0.404302, 4.80723, -30.7979, 6.01508, -65.1676)
+transform = Transform3D(2.23175, -0.319282, 1.10229, 0.316585, 2.67558, -0.363875, -0.487772, 0.275734, 4.80723, -30.7979, 6.01508, -65.1676)
 
 [node name="TerrainWall14" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.62862, -0.702974, 3.45266, 0.358522, 5.89093, 0.0471626, -1.59308, 0.607096, 3.54031, 3.34628, -15.9545, 39.9364)
+transform = Transform3D(1.62862, -0.479428, 3.45266, 0.358522, 4.01762, 0.0471626, -1.59308, 0.41404, 3.54031, 3.34628, -15.9545, 39.9364)
 
 [node name="TerrainWall10" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(1.86247, 0.31009, 0.639543, -0.11953, 3.98937, -0.211118, -0.436109, 0.230865, 2.78913, 18.6048, 0.820112, 26.9618)
+transform = Transform3D(1.86247, 0.211481, 0.639543, -0.11953, 2.72075, -0.211118, -0.436109, 0.15745, 2.78913, 18.6048, 0.820112, 26.9618)
 
 [node name="TerrainWall7" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(-1.41745, 1.1951, 0.0633999, 0.297883, 5.70477, 0.142062, -0.0169511, 0.315932, -2.80503, -32.7512, -0.789403, -24.5401)
+transform = Transform3D(-1.41745, 0.815058, 0.0633999, 0.297883, 3.89065, 0.142062, -0.0169511, 0.215466, -2.80503, -32.7512, -0.789403, -24.5401)
 
 [node name="TerrainWall15" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(-1.26346, 2.85173, 0.0633999, 0.708385, 5.08296, 0.142062, 0.00731949, 0.321884, -2.80503, -31.4341, 2.81491, -71.3376)
+transform = Transform3D(-1.26346, 1.94488, 0.0633999, 0.708385, 3.46658, 0.142062, 0.00731949, 0.219525, -2.80503, -31.4341, 2.81491, -71.3376)
 
 [node name="TerrainWall8" parent="." instance=ExtResource("1_s2wiu")]
-transform = Transform3D(-1.312, 2.88365, 0.441537, 0.579488, 6.81242, 0.11464, -0.202569, 0.811358, -2.53182, -33.97, -8.8733, 14.9679)
+transform = Transform3D(-1.312, 1.96665, 0.441537, 0.579488, 4.64607, 0.11464, -0.202569, 0.553346, -2.53182, -33.97, -8.8733, 14.9679)
 
 [node name="Player" parent="." instance=ExtResource("2_lx38d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80487, 4.18283, 7.12018)
@@ -79,7 +79,7 @@ transform = Transform3D(-6.15221e-07, 0, -1.63399, 0, 0.609745, 0, 2.81492, 0, -
 transform = Transform3D(7.99584e-08, 0, 1.63399, 0, 0.609745, 0, -0.609745, 0, 2.14271e-07, -0.210227, 1.53195, -21.5922)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("4_vwnep")
+environment = ExtResource("4_h7jyh")
 
 [node name="BlockDispenser3" parent="." instance=ExtResource("6_spurv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684537, 1.90022, -2.09037)
