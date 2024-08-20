@@ -81,8 +81,6 @@ transform = Transform3D(-0.146695, -0.881783, -0.191214, 0.116961, 0.048557, -2.
 
 [node name="Player" parent="." instance=ExtResource("2_xfy54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43054, 1.98891, 9.914)
-max_block_size = 5
-mix_block_size = 0.2
 
 [node name="SlantedGround1" parent="." instance=ExtResource("3_etrhe")]
 transform = Transform3D(-2.66528e-08, 0, -0.609745, 0, 0.609745, 0, 0.609745, 0, -2.66528e-08, -0.210231, 1.03383, 4.52844)

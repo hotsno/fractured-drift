@@ -13,7 +13,7 @@ albedo_color = Color(0.500741, 3.73013e-07, 1.92523e-07, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_66ly6"]
 material = SubResource("StandardMaterial3D_kvn1m")
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="DoorUnlocker" type="RigidBody3D"]
 collision_layer = 0
 collision_mask = 3
 axis_lock_linear_x = true

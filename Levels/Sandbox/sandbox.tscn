@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6x8jmhi5pj3"]
+[gd_scene load_steps=13 format=3 uid="uid://6x8jmhi5pj3"]
 
 [ext_resource type="Script" path="res://Levels/Sandbox/sandbox.gd" id="1_eckd0"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="1_nd88y"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://82f5jnd1cle3" path="res://Levels/Level1/level_1.tscn" id="2_jhfka"]
 [ext_resource type="PackedScene" uid="uid://b41bdioubwrgg" path="res://Common/UI/ContinueMessage/continue_message.tscn" id="3_bcykf"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="7_5yyxd"]
+[ext_resource type="PackedScene" uid="uid://dgy60xgkdymqh" path="res://Common/DoorUnlockerButton/Door.tscn" id="8_n226p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmhgr"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,8 +43,6 @@ collision_mask = 0
 size = Vector3(34.5371, 0.001, 32.9307)
 
 [node name="Player" parent="." instance=ExtResource("1_nd88y")]
-max_block_size = 5
-mix_block_size = 0.2
 
 [node name="BlockDispenser" parent="." instance=ExtResource("2_407qt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -3.04948)
@@ -56,8 +55,12 @@ grow_horizontal = 1
 grow_vertical = 1
 next_level = ExtResource("2_jhfka")
 
-[node name="Area3D" parent="." instance=ExtResource("7_5yyxd")]
-transform = Transform3D(1.015, 0, 0, 0, 1.015, 0, 0, 0, 1.015, 5.12156, 0.601125, -8.18623)
+[node name="RigidBody3D" parent="." instance=ExtResource("7_5yyxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34342, 0.000500202, -6.65317)
+door_to_be_unlocked_path = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("8_n226p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -10)
 
 [connection signal="level_complete" from="." to="UIRoot/ContinueMessage" method="_on_sandbox_level_complete"]
 [connection signal="stepped_on" from="BlockDispenser" to="." method="_on_block_dispenser_stepped_on"]

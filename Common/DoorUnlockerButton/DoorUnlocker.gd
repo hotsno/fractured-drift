@@ -2,8 +2,8 @@ extends Node3D
 
 signal door_unlocked
 
-@export var door_to_be_unlocked_path: NodePath
-@onready var door_to_be_unlocked: CollisionObject3D = get_node(door_to_be_unlocked_path)
+@export var door_to_be_unlocked_path: NodePath # MUST USE DOOR SCENE
+@onready var door_to_be_unlocked: Node3D = get_node(door_to_be_unlocked_path)
 
 @export var red_button_path: NodePath
 @onready var red_button: MeshInstance3D = get_node(red_button_path)
@@ -25,8 +25,12 @@ func _on_body_entered(body):
 	print(body.name)
 	if body.name == "Player" or body.is_in_group("ResizeableObjects"):
 		red_button.position = button_up_pos - Vector3(0, button_pushdown_amount, 0)
+		var animation: AnimationPlayer = door_to_be_unlocked.get_node("AnimationPlayer")
+		animation.play("Open")
 
 
 func _on_body_exited(body):
 	if body.name == "Player" or body.is_in_group("ResizeableObjects"):
 		red_button.position = button_up_pos
+		var animation: AnimationPlayer = door_to_be_unlocked.get_node("AnimationPlayer")
+		animation.play("Close")
