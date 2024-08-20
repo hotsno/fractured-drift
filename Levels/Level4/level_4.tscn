@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ephvu71byimv"]
+[gd_scene load_steps=19 format=3 uid="uid://ephvu71byimv"]
 
 [ext_resource type="Environment" uid="uid://c36gitl45l5ge" path="res://Assets/Environments/level_4.tres" id="1_8joe3"]
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="3_kdkl8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="6_jy2d4"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="7_hj4cy"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="7_r23ec"]
+[ext_resource type="PackedScene" uid="uid://yglc4yaqjlwb" path="res://Levels/Level5/level_5.tscn" id="8_7ag0i"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_bi4ji"]
 [ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="9_xclat"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="10_gxjey"]
@@ -299,6 +300,7 @@ transform = Transform3D(1.15136, -0.682308, -1.12672, -0.0398112, 3.66903, -0.31
 
 [node name="Portal" parent="." instance=ExtResource("9_bi4ji")]
 transform = Transform3D(0.012025, 0, 0.999928, 0, 1, 0, -0.999928, 0, 0.012025, -16.0979, 1.29925, -8.94074)
+next_level = ExtResource("8_7ag0i")
 
 [node name="DoorUnlocker" parent="." instance=ExtResource("7_hj4cy")]
 transform = Transform3D(0.994678, 0, 0.103036, 0, 1, 0, -0.103036, 0, 0.994678, 4.55848, 0.0254608, -6.42581)

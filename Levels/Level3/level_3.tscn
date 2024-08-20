@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_snbvh"]
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_rbfmu"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_jfghx"]
-[ext_resource type="PackedScene" uid="uid://yglc4yaqjlwb" path="res://Levels/Level5/level_5.tscn" id="10_cxlr6"]
+[ext_resource type="PackedScene" uid="uid://ephvu71byimv" path="res://Levels/Level4/level_4.tscn" id="10_l2g0d"]
 
 [node name="Level3" type="Node3D"]
 
@@ -160,4 +160,4 @@ transform = Transform3D(0.182467, 0, 0.109932, 0, 0.213024, 0, -0.109932, 0, 0.1
 
 [node name="Portal" parent="." instance=ExtResource("9_jfghx")]
 transform = Transform3D(-0.83872, 0, 0.0482575, 0, 0.840107, 0, -0.0482575, 0, -0.83872, 3.80242, 6.52058, 21.2976)
-next_level = ExtResource("10_cxlr6")
+next_level = ExtResource("10_l2g0d")
