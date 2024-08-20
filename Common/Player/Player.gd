@@ -166,7 +166,7 @@ func _drop_object():
 		if picked_object.position.distance_to(position) <= 0.5:
 			picked_object.position += Vector3(0, 6, 0)
 
-		picked_object.set_axis_velocity(Vector3(0, 0, 0))
+		#picked_object.set_axis_velocity(Vector3(0, 0, 0))
 
 		object_dropped.emit()
 		clicked_on_selecatable_object.emit(picked_object)
