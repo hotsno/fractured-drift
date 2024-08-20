@@ -102,6 +102,7 @@ transform = Transform3D(0.715, 0, 0, 0, 0.715, 0, 0, 0, 0.715, -1.456, 1.959, -2
 next_level = ExtResource("6_wen7k")
 
 [node name="Lava" parent="." instance=ExtResource("7_cmiqr")]
+transform = Transform3D(3.18488, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
 
 [node name="BlockDispenser" parent="." instance=ExtResource("7_055dj")]
 transform = Transform3D(1, 0, 0, 0, 0.999725, 0.0234725, 0, -0.0234725, 0.999725, -4.32117, 0.281165, 0.00126821)

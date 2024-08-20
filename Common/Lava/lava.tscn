@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://qeowltyndhjd"]
+[gd_scene load_steps=14 format=3 uid="uid://qeowltyndhjd"]
 
 [ext_resource type="Script" path="res://Common/Lava/lava.gd" id="1_q2hv1"]
 
@@ -12,6 +12,55 @@ emission_energy_multiplier = 36.35
 
 [sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
 size = Vector3(20.46, 0.14, 7.53)
+
+[sub_resource type="QuadMesh" id="QuadMesh_i4er7"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_kb86n"]
+mesh = SubResource("QuadMesh_i4er7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djwkf"]
+blend_mode = 3
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.605322, 0.339722, 0.219055, 1)
+albedo_texture = SubResource("MeshTexture_kb86n")
+
+[sub_resource type="Curve" id="Curve_rj8m7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_3emh7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pyfhi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_6hrpq"]
+curve_x = SubResource("Curve_rj8m7")
+curve_y = SubResource("Curve_3emh7")
+curve_z = SubResource("Curve_pyfhi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wjh5b"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(5, 1, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+flatness = 0.548
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -0.5, 0)
+scale_min = 0.05
+scale_max = 0.5
+scale_curve = SubResource("CurveXYZTexture_6hrpq")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_7jug1"]
 
 [node name="Lava" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -6.349)
@@ -35,3 +84,13 @@ skeleton = NodePath("../../Area3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_eulps")
+
+[node name="IdleParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(2.77267, 0, 0, 0, 0.256133, 0, 0, 0, 1.13455, 0, 0.880971, 0)
+material_override = SubResource("StandardMaterial3D_djwkf")
+amount = 50
+lifetime = 2.0
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_wjh5b")
+draw_pass_1 = SubResource("QuadMesh_7jug1")

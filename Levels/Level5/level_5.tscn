@@ -1,15 +1,75 @@
-[gd_scene load_steps=18 format=3 uid="uid://yglc4yaqjlwb"]
+[gd_scene load_steps=30 format=3 uid="uid://yglc4yaqjlwb"]
 
 [ext_resource type="Environment" uid="uid://vbbwxjy4n6sj" path="res://Assets/Environments/level_5.tres" id="1_jhgq1"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="2_1mdp2"]
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="3_v6ixq"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="4_pm413"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="5_vim6o"]
-[ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="6_n6gbi"]
+[ext_resource type="Script" path="res://Common/Lava/lava.gd" id="6_ciccb"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="7_gtyds"]
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_euy5u"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="9_gkoq4"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_m3s1s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
+size = Vector3(20.46, 0.14, 7.53)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qnlcj"]
+emission_enabled = true
+emission = Color(0.947157, 0.16229, 0, 1)
+emission_energy_multiplier = 36.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_nuwb3"]
+size = Vector3(20.46, 0.14, 7.53)
+
+[sub_resource type="QuadMesh" id="QuadMesh_i4er7"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_kb86n"]
+mesh = SubResource("QuadMesh_i4er7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djwkf"]
+blend_mode = 3
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.605322, 0.339722, 0.219055, 1)
+albedo_texture = SubResource("MeshTexture_kb86n")
+
+[sub_resource type="Curve" id="Curve_rj8m7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_3emh7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pyfhi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_6hrpq"]
+curve_x = SubResource("Curve_rj8m7")
+curve_y = SubResource("Curve_3emh7")
+curve_z = SubResource("Curve_pyfhi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wjh5b"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(5, 1, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+flatness = 0.548
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -0.5, 0)
+scale_min = 0.05
+scale_max = 0.5
+scale_curve = SubResource("CurveXYZTexture_6hrpq")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_7jug1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
 size = Vector3(1, 10.506, 11.6245)
@@ -245,8 +305,38 @@ transform = Transform3D(-0.704618, 0, 0.172601, 0, 0.72545, 0, -0.172601, 0, -0.
 [node name="BlockDispenser" parent="." instance=ExtResource("5_vim6o")]
 transform = Transform3D(0.72545, 0, 0, 0, 0.72545, 0, 0, 0, 0.72545, -6.7098, 0.64777, -15.1864)
 
-[node name="Lava" parent="." instance=ExtResource("6_n6gbi")]
-transform = Transform3D(4.31274, 0, 0, 0, 0.72545, 0, 0, 0, 24.7183, 5.41801, 3.00012, -0.238561)
+[node name="Lava" type="Node3D" parent="."]
+transform = Transform3D(4.31274, 0, 0, 0, 0.72545, 0, 0, 0, 10.3162, 5.41801, 3.00012, -22.6599)
+
+[node name="Area3D" type="Area3D" parent="Lava"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172676, 0)
+collision_layer = 7
+script = ExtResource("6_ciccb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/Area3D"]
+shape = SubResource("BoxShape3D_eulps")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lava"]
+collision_layer = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lava/StaticBody3D"]
+material_override = SubResource("ORMMaterial3D_qnlcj")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_nuwb3")
+skeleton = NodePath("../../Area3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/StaticBody3D"]
+shape = SubResource("BoxShape3D_eulps")
+
+[node name="IdleParticles" type="GPUParticles3D" parent="Lava"]
+transform = Transform3D(2.77267, 0, 0, 0, 0.256133, 0, 0, 0, 1.00477, 0, 0.880971, 0)
+material_override = SubResource("StandardMaterial3D_djwkf")
+amount = 50
+lifetime = 2.0
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_wjh5b")
+draw_pass_1 = SubResource("QuadMesh_7jug1")
 
 [node name="Player" parent="." instance=ExtResource("7_gtyds")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31768, 7.93418, 26.4187)
