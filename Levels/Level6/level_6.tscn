@@ -390,7 +390,7 @@ transform = Transform3D(0.136105, 0, -0.0565466, 0, 0.147385, 0, 0.0565466, 0, 0
 transform = Transform3D(0.0976586, 0, -0.198846, 0, 0.221534, 0, 0.198846, 0, 0.0976586, -4.48001, 15.4761, 12.7856)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("9_250qf")]
-transform = Transform3D(0.987383, 0, -0.158348, 0.0296715, 0.982287, 0.185017, 0.155543, -0.187381, 0.969894, 4.23088, -0.761421, 25.2661)
+transform = Transform3D(0.987383, -2.79219e-09, -0.158348, 0.00560921, 0.999372, 0.0349757, 0.158248, -0.0354225, 0.986764, 4.23088, -0.761421, 25.2661)
 door_to_be_unlocked_path = NodePath("../Door")
 
 [node name="Block" type="RigidBody3D" parent="." groups=["ResizeableObjects"]]
