@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_snbvh"]
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_rbfmu"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_jfghx"]
-[ext_resource type="PackedScene" uid="uid://yglc4yaqjlwb" path="res://Levels/Level4/level_4.tscn" id="10_cxlr6"]
+[ext_resource type="PackedScene" uid="uid://yglc4yaqjlwb" path="res://Levels/Level5/level_5.tscn" id="10_cxlr6"]
 
 [node name="Level3" type="Node3D"]
 
