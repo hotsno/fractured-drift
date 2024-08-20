@@ -101,11 +101,11 @@ _data = {
 "RESET": SubResource("Animation_lyskx")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3t85"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l3bi"]
 albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_taosq"]
-material = SubResource("StandardMaterial3D_g3t85")
+material = SubResource("StandardMaterial3D_5l3bi")
 
 [node name="Level5" type="Node3D"]
 
