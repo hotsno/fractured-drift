@@ -67,7 +67,6 @@ shadow_mesh = SubResource("ArrayMesh_mgkys")
 collision_layer = 6
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_x383u")
-linear_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f4m48")
