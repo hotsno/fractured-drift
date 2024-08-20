@@ -173,7 +173,7 @@ albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 material = SubResource("StandardMaterial3D_g3t85")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03mkb"]
-size = Vector3(0.331055, 12.704, 17.5011)
+size = Vector3(0.331055, 12.704, 19.5416)
 
 [sub_resource type="Animation" id="Animation_6j8og"]
 resource_name = "Close"
