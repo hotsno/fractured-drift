@@ -102,7 +102,7 @@ func _input(_event):
 func _run_resize_object_logic():
 	if picked_object and is_instance_valid(picked_object):
 		var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
-		var collision: CollisionObject3D = picked_object.get_node("CollisionShape3D")
+		var collision: CollisionShape3D = picked_object.get_node("CollisionShape3D")
 		if Input.is_action_pressed("scroll_wheel_up"):
 			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
