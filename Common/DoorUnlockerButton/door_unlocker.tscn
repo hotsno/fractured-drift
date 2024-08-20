@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bj7uygunyx5ib" path="res://Assets/Audio/Sound Effects/DoorUnlockerSound.wav" id="2_3logp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ga2s"]
-size = Vector3(1, 0.46875, 1)
+size = Vector3(1.36481, 0.46875, 1.28845)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mkyim"]
 
@@ -24,12 +24,12 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 contact_monitor = true
-max_contacts_reported = 3
+max_contacts_reported = 6
 script = ExtResource("1_65prp")
 red_button_path = NodePath("Node3D/RedButton")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.965, 0, 0, 0, 0.965, 0, 0, 0, 0.965, 0, 0.224327, 0)
+transform = Transform3D(0.965, 0, 0, 0, 0.965, 0, 0, 0, 0.965, -0.0128694, 0.224327, 0.00488861)
 shape = SubResource("BoxShape3D_7ga2s")
 
 [node name="Node3D" type="Node3D" parent="."]
