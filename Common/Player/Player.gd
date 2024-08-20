@@ -17,6 +17,12 @@ var t_bob = 0.0
 
 var gravity = 15
 
+var default_floor_ray_length = 7.5
+var current_ray_length = 7.5
+var scale_down = 0.9090909090909
+var ray_scale_up =  1.03
+var ray_scale_down = 0.97087
+
 @export var max_block_size = 5
 @export var mix_block_size = 0.2
 
@@ -111,17 +117,17 @@ func _run_resize_object_logic():
 				collision.scale *= 1.1
 
 				# MAYBE PROBLEM HERE @MIYAZUKi
-				$Head/Camera3D/RayCast3D.scale *= 1.1
+				$Head/Camera3D/RayCast3D.target_position *= ray_scale_up
 
 		if Input.is_action_pressed("scroll_wheel_down"):
 			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
 			if mesh.scale.x >= mix_block_size:
-				mesh.scale *= 0.9
-				collision.scale *= 0.9
+				mesh.scale *= scale_down
+				collision.scale *= scale_down
 
 				# MAYBE PROBLEM HERE @MIYAZUKi
-				$Head/Camera3D/RayCast3D.scale *= 0.9
+				$Head/Camera3D/RayCast3D.target_position *= ray_scale_down
 
 
 func _run_pickup_object_logic():
@@ -156,6 +162,10 @@ func _pick_object():
 		object_picked.emit()
 		picked_object = collider
 		clicked_on_selecatable_object.emit(picked_object)
+		
+		# Fix the band aid solution
+		$Head/Camera3D/RayCast3D.target_position.z = -1 * default_floor_ray_length * (ray_scale_up ** (picked_object.get_node("MeshInstance3D").scale.x / 1.1))
+		#current_ray_length = default_floor_ray_length
 
 		picked_object.set_collision_layer_value(2, false)
 		picked_object.set_collision_layer_value(3, false)
