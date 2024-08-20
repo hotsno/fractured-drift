@@ -102,12 +102,13 @@ func _input(_event):
 func _run_resize_object_logic():
 	if picked_object and is_instance_valid(picked_object):
 		var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
+		var collision: CollisionObject3D = picked_object.get_node("CollisionShape3D")
 		if Input.is_action_pressed("scroll_wheel_up"):
 			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
 			if mesh.scale.x <= max_block_size:
 				mesh.scale *= 1.1
-				picked_object.get_node("CollisionShape3D").scale *= 1.1
+				collision.scale *= 1.1
 
 				$Head/Camera3D/RayCast3D.scale *= 1.1
 
@@ -116,7 +117,7 @@ func _run_resize_object_logic():
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
 			if mesh.scale.x >= mix_block_size:
 				mesh.scale *= 0.9
-				mesh.scale *= 0.9
+				collision.scale *= 0.9
 
 				$Head/Camera3D/RayCast3D.scale *= 0.9
 
@@ -162,8 +163,10 @@ func _pick_object():
 func _drop_object():
 	if picked_object:
 
-		if picked_object.position.distance_to(position) <= 2:
+		if picked_object.position.distance_to(position) <= 0.5:
 			picked_object.position += Vector3(0, 6, 0)
+
+		picked_object.set_axis_velocity(Vector3(0, 0, 0))
 
 		object_dropped.emit()
 		clicked_on_selecatable_object.emit(picked_object)
