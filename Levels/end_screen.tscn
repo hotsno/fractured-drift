@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://s8es8lgov65i"]
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 637.0
+offset_top = 401.0
+offset_right = 2568.0
+offset_bottom = 1521.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thanks for playing!"
+editable = false
+drag_and_drop_selection_enabled = false

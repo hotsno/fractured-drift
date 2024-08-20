@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://2gxl55x4nuh6"]
+[gd_scene load_steps=33 format=4 uid="uid://2gxl55x4nuh6"]
 
 [ext_resource type="Environment" uid="uid://dxr5wg7lx3o1j" path="res://Assets/Environments/level_6.tres" id="1_c18yi"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="2_8udwf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_ol8ak"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="9_250qf"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="10_yeqbr"]
+[ext_resource type="PackedScene" uid="uid://s8es8lgov65i" path="res://Levels/end_screen.tscn" id="11_0hnku"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x383u"]
 absorbent = true
@@ -466,6 +467,7 @@ transform = Transform3D(-0.722364, 0, 0.0668463, 0, 0.72545, 0, -0.0668463, 0, -
 
 [node name="Portal" parent="Node3D" instance=ExtResource("10_yeqbr")]
 transform = Transform3D(0.0921446, 0, 0.995746, 0, 1, 0, -0.995746, 0, 0.0921446, -13.6323, 28.9673, 13.9476)
+next_level = ExtResource("11_0hnku")
 
 [node name="DoorUnlocker" parent="." instance=ExtResource("9_250qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54099, 12.4009, 25.3211)
