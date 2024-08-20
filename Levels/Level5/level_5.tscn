@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://yglc4yaqjlwb"]
 
-[ext_resource type="Environment" uid="uid://vbbwxjy4n6sj" path="res://Assets/Environments/level_4.tres" id="1_jhgq1"]
+[ext_resource type="Environment" uid="uid://vbbwxjy4n6sj" path="res://Assets/Environments/level_5.tres" id="1_jhgq1"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="2_1mdp2"]
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="3_v6ixq"]
 [ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="4_pm413"]
@@ -107,7 +107,7 @@ albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_taosq"]
 material = SubResource("StandardMaterial3D_g3t85")
 
-[node name="Level4" type="Node3D"]
+[node name="Level5" type="Node3D"]
 
 [node name="Lighting" type="Node3D" parent="."]
 
