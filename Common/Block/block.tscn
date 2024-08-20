@@ -67,6 +67,7 @@ shadow_mesh = SubResource("ArrayMesh_mgkys")
 collision_layer = 6
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_x383u")
+inertia = Vector3(1, 1, 1)
 linear_damp_mode = 1
 linear_damp = 1.5
 
