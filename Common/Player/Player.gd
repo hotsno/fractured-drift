@@ -94,26 +94,31 @@ func _input(_event):
 		if not picked_object:
 			_pick_object()
 			interact_timer.start()
-		elif picked_object and interact_timer.timeout:
+		elif picked_object and is_instance_valid(picked_object):# and interact_timer.timeout:
 			_drop_object()
 
 	_run_resize_object_logic()
 
 func _run_resize_object_logic():
-	if picked_object:
+	if picked_object and is_instance_valid(picked_object):
+		var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
 		if Input.is_action_pressed("scroll_wheel_up"):
 			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
-			if picked_object.get_node("MeshInstance3D").scale.x <= max_block_size:
-				picked_object.get_node("MeshInstance3D").scale *= 1.1
+			if mesh.scale.x <= max_block_size:
+				mesh.scale *= 1.1
 				picked_object.get_node("CollisionShape3D").scale *= 1.1
+
+				$Head/Camera3D/RayCast3D.scale *= 1.1
 
 		if Input.is_action_pressed("scroll_wheel_down"):
 			object_resized.emit()
 			# x, y, and z are always the same and MeshInstance3D and CollisionShape3D will always be the same size
-			if picked_object.get_node("MeshInstance3D").scale.x >= mix_block_size:
-				picked_object.get_node("MeshInstance3D").scale *= 0.9
-				picked_object.get_node("CollisionShape3D").scale *= 0.9
+			if mesh.scale.x >= mix_block_size:
+				mesh.scale *= 0.9
+				mesh.scale *= 0.9
+
+				$Head/Camera3D/RayCast3D.scale *= 0.9
 
 
 func _run_pickup_object_logic():
@@ -156,6 +161,10 @@ func _pick_object():
 
 func _drop_object():
 	if picked_object:
+
+		if picked_object.position.distance_to(position) <= 2:
+			picked_object.position += Vector3(0, 6, 0)
+
 		object_dropped.emit()
 		clicked_on_selecatable_object.emit(picked_object)
 		picked_object.set_collision_layer_value(2, true)

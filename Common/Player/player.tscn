@@ -42,7 +42,7 @@ target_position = Vector3(0, 0, -13.73)
 collision_mask = 6
 
 [node name="ObjectHoldingPoint" type="Marker3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.6008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.57587)
 
 [node name="Wand" parent="Head/Camera3D" instance=ExtResource("2_uydla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, -0.416, -0.52)
