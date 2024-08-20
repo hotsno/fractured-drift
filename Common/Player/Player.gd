@@ -152,8 +152,9 @@ func _run_pickup_object_logic():
 		else:
 			# BLOCK HOVERING ABOVE FLOOR
 			var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
+			print( mesh.scale.y / 1.5)
 			picked_object.set_linear_velocity((floor_raycast.get_collision_point() - a
-			+ Vector3(0, 2 + mesh.get_aabb().get_longest_axis_size(), 0)) * pull_power)
+			+ Vector3(0, mesh.scale.y / 2, 0)) * pull_power)
 
 	elif not is_instance_valid(picked_object):
 		picked_object = null
@@ -164,7 +165,7 @@ func _pick_object():
 		object_picked.emit()
 		picked_object = collider
 		clicked_on_selecatable_object.emit(picked_object)
-		
+
 		# Fix the band aid solution
 		$Head/Camera3D/RayCast3D.target_position.z = -1 * default_floor_ray_length * (ray_scale_up ** (picked_object.get_node("MeshInstance3D").scale.x / 1.1))
 		#current_ray_length = default_floor_ray_length
