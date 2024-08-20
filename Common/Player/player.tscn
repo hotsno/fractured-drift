@@ -75,7 +75,8 @@ pitch_scale = 0.52
 
 [node name="WalkingSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_v2s46")
-volume_db = -18.286
+volume_db = -27.429
+max_db = -0.973
 pitch_scale = 0.83
 
 [node name="PickupSound" type="AudioStreamPlayer3D" parent="."]

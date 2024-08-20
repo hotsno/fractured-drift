@@ -83,6 +83,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_heuw4")
+volume_db = -10.685
+pitch_scale = 0.35
 
 [node name="CloudParticles" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_3qm1h")
