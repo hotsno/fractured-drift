@@ -141,14 +141,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_owltk")
 
 [node name="CreditsLabel" type="Label" parent="Credits/PanelContainer"]
 layout_mode = 2
-text = "Made by: Kurasaki, Miyazaki, and hotsugano
+text = "Made by: @danpoll, @cshokri, and hotsugano
 
 Start menu art: @youknow_yunoo on IG
 
 Sounds:
 - Button Click 2.wav by Mellau -- https://freesound.org/s/506053/ -- License: Attribution NonCommercial 4.0
-
-- Magic Item by NearTheAtmoshphere -- https://freesound.org/s/683181/ -- License: Creative Commons 0
 
 Tools: Godot, Blender"
 label_settings = SubResource("LabelSettings_4o0sv")
