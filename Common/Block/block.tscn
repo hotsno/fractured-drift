@@ -3,6 +3,7 @@
 [ext_resource type="Shader" path="res://Assets/Model Scenes/terrain_wall_1.gdshader" id="1_q6d72"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x383u"]
+absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f4m48"]
 
@@ -66,6 +67,7 @@ shadow_mesh = SubResource("ArrayMesh_mgkys")
 collision_layer = 6
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_x383u")
+linear_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_f4m48")
