@@ -33,6 +33,6 @@ func _on_player_object_resized():
 func _on_player_object_dropped():
 	if object_has_been_dropped or not object_has_been_resized:
 		return
-	text.text = "Navigate your way to the portal."
+	text.text = "If you need to restart, press R."
 	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	object_has_been_dropped = true
