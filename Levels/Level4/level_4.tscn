@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ephvu71byimv"]
+[gd_scene load_steps=18 format=3 uid="uid://ephvu71byimv"]
 
 [ext_resource type="Environment" uid="uid://c36gitl45l5ge" path="res://Assets/Environments/level_4.tres" id="1_8joe3"]
 [ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="3_kdkl8"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="6_jy2d4"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="7_hj4cy"]
 [ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="7_r23ec"]
-[ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="8_rsdb5"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_bi4ji"]
+[ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="9_xclat"]
+[ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="10_gxjey"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
-size = Vector3(1, 12.792, 34.0951)
+size = Vector3(1, 9.79541, 34.0951)
 
 [sub_resource type="Animation" id="Animation_xlkhk"]
 resource_name = "Close"
@@ -222,19 +223,16 @@ transform = Transform3D(-0.281732, 0.280314, 2.93789, 0.43798, 4.11888, -0.11818
 transform = Transform3D(-3.17104e-08, 0, -0.72545, 0, 0.72545, 0, 0.72545, 0, -3.17104e-08, 0.9084, 7.58091, 24.191)
 
 [node name="SlantedGround2" parent="." instance=ExtResource("4_s7ra6")]
-transform = Transform3D(0.396844, 0, -0.917887, 0, 1, 0, 0.917887, 0, 0.396844, 3.06828, 2.20383, 16.3912)
+transform = Transform3D(0.396844, 0, -0.917887, 0, 1, 0, 0.917887, 0, 0.396844, 3.06828, 1.90649, 16.3912)
 
 [node name="SlantedGround3" parent="." instance=ExtResource("4_s7ra6")]
 transform = Transform3D(0.989607, 0, 0.143804, 0, 1, 0, -0.143804, 0, 0.989607, 22.5276, 2.20383, -9.45987)
-
-[node name="SlantedGround5" parent="." instance=ExtResource("4_s7ra6")]
-transform = Transform3D(-0.149235, 0, 1.16371, 0, 1, 0, -0.960888, 0, -0.180735, 0.35922, 1.28516, -15.8033)
 
 [node name="SlantedGround4" parent="." instance=ExtResource("4_s7ra6")]
 transform = Transform3D(-0.980444, 0, 0.196802, 0, 1, 0, -0.196802, 0, -0.980444, -25.28, 2.20383, -8.95407)
 
 [node name="Player" parent="." instance=ExtResource("7_r23ec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73634, 7.11687, 21.7331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3776, 0.855195, 2.66009)
 
 [node name="Lava" parent="." instance=ExtResource("6_jy2d4")]
 transform = Transform3D(7.4019, 0, 0, 0, 7.4019, 0, 0, 0, 7.4019, -2.77413, -2.23497, -1.49664)
@@ -299,14 +297,15 @@ transform = Transform3D(0.911016, -0.670572, -1.15194, -0.0921569, 3.60593, -0.2
 [node name="TerrainWall49" parent="." instance=ExtResource("6_ewiho")]
 transform = Transform3D(1.15136, -0.682308, -1.12672, -0.0398112, 3.66903, -0.314853, 1.75992, 0.529371, 0.72999, -15.5601, 0.217221, -20.1557)
 
-[node name="BlockDispenser" parent="." instance=ExtResource("8_rsdb5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65966, 0.929096, 6.45053)
-
 [node name="Portal" parent="." instance=ExtResource("9_bi4ji")]
 transform = Transform3D(0.012025, 0, 0.999928, 0, 1, 0, -0.999928, 0, 0.012025, -16.0979, 1.29925, -8.94074)
 
 [node name="DoorUnlocker" parent="." instance=ExtResource("7_hj4cy")]
-transform = Transform3D(0.914678, 0, 0.404184, 0, 1, 0, -0.404184, 0, 0.914678, 12.6195, 0.914878, -10.4208)
+transform = Transform3D(0.994678, 0, 0.103036, 0, 1, 0, -0.103036, 0, 0.994678, 4.55848, 0.0254608, -6.42581)
+door_to_be_unlocked_path = NodePath("../Door2")
+
+[node name="DoorUnlocker2" parent="." instance=ExtResource("7_hj4cy")]
+transform = Transform3D(0.994678, 0, 0.103036, 0, 1, 0, -0.103036, 0, 0.994678, -2.99367, 0.0254608, -6.04883)
 door_to_be_unlocked_path = NodePath("../Door")
 
 [node name="Door" type="RigidBody3D" parent="."]
@@ -334,3 +333,35 @@ libraries = {
 transform = Transform3D(0.321936, 0, 0, 0, 13.6936, 0, 0, 0, 32.22, 6.09304, 5.6796, 0)
 mesh = SubResource("BoxMesh_taosq")
 skeleton = NodePath("")
+
+[node name="Door2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13273, -0.943642, -8.31412)
+collision_layer = 7
+collision_mask = 7
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2"]
+shape = SubResource("BoxShape3D_bgt32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
+libraries = {
+"": SubResource("AnimationLibrary_ykoyc")
+}
+
+[node name="Node3D" type="Node3D" parent="Door2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door2/Node3D"]
+transform = Transform3D(0.321936, 0, 0, 0, 10.1999, 0, 0, 0, 23.2434, 6.09304, 6.18495, 0)
+mesh = SubResource("BoxMesh_taosq")
+skeleton = NodePath("")
+
+[node name="Block" parent="." instance=ExtResource("9_xclat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0693, 1.47194, -10.7048)
+
+[node name="FlatGround" parent="." instance=ExtResource("10_gxjey")]
+transform = Transform3D(1.40733, 0, 0, 0, 1.40733, 0, 0, 0, 1.40733, -0.0626681, -0.664652, -5.17485)

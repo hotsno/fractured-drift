@@ -20,8 +20,8 @@ var gravity = 15
 var default_floor_ray_length = 7.5
 var current_ray_length = 7.5
 var scale_down = 0.9090909090909
-var ray_scale_up =  1.03
-var ray_scale_down = 0.97087
+var ray_scale_up =  1.08
+var ray_scale_down = 0.92593
 
 @export var max_block_size = 5
 @export var mix_block_size = 0.2
