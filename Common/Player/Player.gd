@@ -43,6 +43,7 @@ var reload_ready = true
 @onready var walking_sound: AudioStreamPlayer3D = $WalkingSound
 @onready var pickup_sound: AudioStreamPlayer3D = $PickupSound
 @onready var background_music: AudioStreamPlayer3D = $BackgroundMusic
+@onready var jump_sound: AudioStreamPlayer3D = $JumpSound
 
 var picked_object: RigidBody3D
 var pull_power = 4
@@ -72,6 +73,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	speed = WALK_SPEED * speed_multiplier
 
