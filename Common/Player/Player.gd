@@ -40,6 +40,8 @@ var ray_scale_down = 0.92593
 
 var reload_ready = true
 
+@onready var walking_sound: AudioStreamPlayer3D = $WalkingSound
+
 var picked_object: RigidBody3D
 var pull_power = 4
 @export var head_path: NodePath
@@ -76,9 +78,13 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
+			if not walking_sound.playing:
+				walking_sound.play()
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
+
+			walking_sound.stop()
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)

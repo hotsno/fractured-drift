@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drkbyftyse3xy"]
+[gd_scene load_steps=9 format=3 uid="uid://drkbyftyse3xy"]
 
 [ext_resource type="Script" path="res://Common/Player/Player.gd" id="1_0cuco"]
 [ext_resource type="PackedScene" uid="uid://dmpf1ksqe41gs" path="res://Common/Tools/wand.tscn" id="2_uydla"]
 [ext_resource type="PackedScene" uid="uid://d0h6oelraxi32" path="res://Common/UI/UIRoot/ui_root.tscn" id="4_3hwe0"]
 [ext_resource type="AudioStream" uid="uid://crrykn5ftqva2" path="res://Assets/Audio/Sound Effects/BlockPlaceSound.wav" id="5_rvmnk"]
 [ext_resource type="PackedScene" uid="uid://dnj8tthmj14mg" path="res://Common/UI/Crosshair/crosshair.tscn" id="5_wslm0"]
+[ext_resource type="AudioStream" uid="uid://cnaro0hhvgpds" path="res://Assets/Audio/Sound Effects/PlayWalkSound.wav" id="6_v2s46"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yaqnn"]
 
@@ -69,5 +70,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_rvmnk")
+
+[node name="WalkingSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_v2s46")
+volume_db = 28.671
+max_db = 6.0
 
 [connection signal="clicked_on_selecatable_object" from="." to="Head/Camera3D/Wand" method="_on_player_clicked_on_selecatable_object"]
