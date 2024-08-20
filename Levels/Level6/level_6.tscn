@@ -1,0 +1,440 @@
+[gd_scene load_steps=26 format=3 uid="uid://2gxl55x4nuh6"]
+
+[ext_resource type="Environment" uid="uid://dxr5wg7lx3o1j" path="res://Assets/Environments/level_6.tres" id="1_c18yi"]
+[ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="2_8udwf"]
+[ext_resource type="PackedScene" uid="uid://2cxfsxpsperv" path="res://Assets/Model Scenes/terrain_wall_1.tscn" id="3_li3rg"]
+[ext_resource type="PackedScene" uid="uid://c6x83vpaxoxl6" path="res://Assets/Model Scenes/slanted_ground_1.tscn" id="4_mcvys"]
+[ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="5_jjjul"]
+[ext_resource type="PackedScene" uid="uid://drkbyftyse3xy" path="res://Common/Player/player.tscn" id="7_dye1a"]
+[ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_ol8ak"]
+[ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="9_250qf"]
+[ext_resource type="PackedScene" uid="uid://dobllh1fgd2x3" path="res://Common/Block/block.tscn" id="10_7i03l"]
+[ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="10_yeqbr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
+size = Vector3(1, 10.506, 23.6332)
+
+[sub_resource type="Animation" id="Animation_xlkhk"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fryip"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lyskx"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykoyc"]
+_data = {
+"Close": SubResource("Animation_xlkhk"),
+"Open": SubResource("Animation_fryip"),
+"RESET": SubResource("Animation_lyskx")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l3bi"]
+albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_taosq"]
+material = SubResource("StandardMaterial3D_5l3bi")
+size = Vector3(0.4, 13, 32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7md3l"]
+size = Vector3(0.147461, 86.8611, 148.779)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wghjl"]
+size = Vector3(1, 10.506, 11.6245)
+
+[sub_resource type="Animation" id="Animation_dwffw"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b8fwk"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oj02f"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yobd1"]
+_data = {
+"Close": SubResource("Animation_dwffw"),
+"Open": SubResource("Animation_b8fwk"),
+"RESET": SubResource("Animation_oj02f")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3t85"]
+albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0u1ij"]
+material = SubResource("StandardMaterial3D_g3t85")
+
+[node name="Level6" type="Node3D"]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.221688, -0.960744, -0.166813, 0.517579, -0.0290475, 0.855142, -0.826418, -0.275913, 0.490822, 21.9868, 22.3574, 18.7414)
+light_color = Color(0.8363, 0.624958, 0.581272, 1)
+light_energy = 10.0
+light_indirect_energy = 0.3
+light_volumetric_fog_energy = 2.0
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_c18yi")
+
+[node name="FlatGround" parent="." instance=ExtResource("2_8udwf")]
+transform = Transform3D(4.43136, 0, 0, 0, 2.97435, 0, 0, 0, 5.13355, 0.703956, -2.98281, 2.92566)
+
+[node name="TerrainWall1" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.42037, 0, -1.24413, 0, 1.27301, 0, 1.4513, 0, 1.21762, 30.3698, -1.66596, 19.3393)
+
+[node name="TerrainWall6" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.00852683, 0.0473557, -1.25077, 0.0968914, 1.04645, 0.0569905, 1.13523, -0.0896702, 0.00452836, -0.994632, 11.4353, 35.7596)
+
+[node name="TerrainWall13" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.426441, 0.0669188, -0.634717, -0.0568357, 0.860917, 0.0109829, 0.409347, 0.0498215, 0.662743, 8.67455, -5.42851, 24.1475)
+
+[node name="TerrainWall37" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.00015, 0.114979, -0.712096, -0.0162727, 1.59255, 0.234889, 0.467211, -0.190662, 1.53254, 15.0925, -2.1236, 28.7686)
+
+[node name="TerrainWall18" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-0.876622, -0.119049, -0.32903, -0.086693, 1.31318, 0.0167525, 0.210939, 0.0449612, -1.36051, 18.0651, -13.9645, 10.4699)
+
+[node name="TerrainWall19" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.587309, 0.0810672, 0.105005, -0.0568357, 0.860917, 0.0109829, -0.066964, -0.0197097, 0.911634, -3.19154, -8.93245, 24.5332)
+
+[node name="TerrainWall12" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-0.376726, 0.0182635, 0.718077, -0.0373182, 0.497899, -0.0863913, -0.477092, -0.0533672, -0.56026, -6.0788, 9.52964, 21.6293)
+
+[node name="TerrainWall14" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.818952, -0.110221, 0.00891225, 0.128884, 0.700001, 0.00991932, -0.00824564, -0.00573155, 1.04005, -3.3357, -4.68904, 24.5599)
+
+[node name="TerrainWall16" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.593795, -0.0886911, 0.172476, 0.0819667, 0.743237, -0.0717145, -0.107791, 0.0765947, 0.895598, -5.95706, -5.12839, 13.9656)
+
+[node name="TerrainWall10" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.29597, 0.0600038, 0.778904, -0.131109, 1.1787, 0.064831, -0.789934, -0.0971926, 1.26711, 30.917, -2.80278, 1.7632)
+
+[node name="TerrainWall7" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.0950556, 0.0291187, -0.922367, 0.141008, 1.29015, 0.0471082, 0.664252, -0.27804, 0.121992, 10.0709, 9.51345, 33.1551)
+
+[node name="TerrainWall8" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-0.100824, 0.111369, -0.597273, 0.229704, 0.856466, 0.0503829, 0.754953, -0.245717, -0.0950953, 13.5766, 8.94401, 25.6656)
+
+[node name="TerrainWall20" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-1.93721, -0.0522769, 2.46913, -0.139963, 2.30238, -0.111864, -1.65071, -0.133867, -2.88819, 27.334, -0.585786, -27.3772)
+
+[node name="TerrainWall21" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-1.05228, 0.136739, 2.51571, 0.013325, 2.27911, -0.166705, -2.89265, -0.039244, -0.915929, -5.04559, 0.348927, -12.5256)
+
+[node name="TerrainWall23" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.0107219, 0.0595515, -1.57289, 0.121845, 1.31595, 0.0716672, 1.42758, -0.112763, 0.00569593, -21.8475, 0.440026, 60.9961)
+
+[node name="TerrainWall26" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.59731, 0.250656, -2.37744, -0.212887, 3.22472, 0.0411383, 1.53328, 0.186615, 2.48242, 22.5324, -6.00367, 70.8051)
+
+[node name="TerrainWall29" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.0158325, -0.0147634, 3.89091, 0.121453, 2.56984, 0.0213833, -2.83468, 0.110022, 0.0226501, 6.10131, -10.6004, 46.3282)
+
+[node name="TerrainWall31" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.30838, -0.254715, 0.0419168, 0.20595, 1.61674, 0.0189786, -0.0295284, -0.0100558, 1.98955, 34.5354, 6.36111, -0.584403)
+
+[node name="TerrainWall32" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(3.37831, 0.779337, 0.818936, -0.56204, 4.20492, -0.684308, -0.615849, 0.437615, 5.11689, -111.152, -8.15449, 28.2387)
+
+[node name="TerrainWall33" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.66768, 0.334857, -3.59213, -0.324164, 4.308, 0.17511, 3.36165, 0.249304, 1.79892, 58.2259, -14.0692, 37.1832)
+
+[node name="TerrainWall34" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.178649, -0.046842, -1.9312, 0.659517, 2.44608, 0.0830707, 1.25939, -1.27431, 0.230444, 0.723322, 4.89292, 47.8424)
+
+[node name="TerrainWall36" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.91472, 1.11697, 1.18237, -0.0965273, 5.00393, -0.97255, -1.04925, 1.57798, 2.24712, 44.2354, -0.982565, -6.81968)
+
+[node name="SlantedGround1" parent="." instance=ExtResource("4_mcvys")]
+transform = Transform3D(-2.07892e-08, 0, -0.475603, 0, 0.475603, 0, 0.475603, 0, -2.07892e-08, 2.03316, -0.3228, 26.2929)
+
+[node name="TerrainWall39" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.103441, -0.00631917, 0.987402, 0.0483891, 0.671781, 0.0054494, -1.12467, 0.0283222, 0.0910509, 8.52153, 6.4933, 24.7542)
+
+[node name="TerrainWall15" parent="." instance=ExtResource("3_li3rg")]
+transform = Transform3D(-1.02847, 0.137197, 0.17468, 0.163259, 0.886695, 0.0125649, -0.136005, 0.026884, -1.30585, -2.07858, 9.76529, 27.5697)
+
+[node name="SlantedGround2" parent="." instance=ExtResource("4_mcvys")]
+transform = Transform3D(-0.0409137, 0, -0.47384, 0, 0.475603, 0, 0.47384, 0, -0.0409137, 5.04542, 13.0139, 27.8199)
+
+[node name="Player" parent="." instance=ExtResource("7_dye1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22682, -0.850732, 28.946)
+mix_block_size = 0.1
+
+[node name="SquareTerrainFloor3" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.236787, 0, -0.0983762, 0, 0.256411, 0, 0.0983762, 0, 0.236787, 13.7395, 1.28574, 6.15973)
+
+[node name="SquareTerrainFloor5" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.0939832, 0, -0.155927, 0, 0.182062, 0, 0.155927, 0, 0.0939832, 15.6186, 5.27982, 11.3194)
+
+[node name="SquareTerrainFloor6" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0.245545, 9.44238, 11.2717, 20.0074)
+
+[node name="SquareTerrainFloor7" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.236787, 0, -0.0983762, 0, 0.256411, 0, 0.0983762, 0, 0.236787, 12.589, 7.62534, 15.4575)
+
+[node name="SquareTerrainFloor8" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.168666, 0, -0.0700746, 0, 0.182645, 0, 0.0700746, 0, 0.168666, 6.10128, 10.2698, 12.4945)
+
+[node name="SquareTerrainFloor4" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.136105, 0, -0.0565466, 0, 0.147385, 0, 0.0565466, 0, 0.136105, 1.09941, 13.4399, 14.4455)
+
+[node name="SquareTerrainFloor9" parent="." instance=ExtResource("8_ol8ak")]
+transform = Transform3D(0.0976586, 0, -0.198846, 0, 0.221534, 0, 0.198846, 0, 0.0976586, -4.48001, 15.4761, 12.7856)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("9_250qf")]
+transform = Transform3D(0.987383, 0, -0.158348, 0, 1, 0, 0.158348, 0, 0.987383, 4.28633, -0.860045, 23.7057)
+door_to_be_unlocked_path = NodePath("../Door")
+
+[node name="Door" type="RigidBody3D" parent="."]
+transform = Transform3D(0.136096, 0, 0.990696, 0, 1, 0, -0.990696, 0, 0.136096, 4.5061, 12.2826, 21.67)
+collision_layer = 7
+collision_mask = 7
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(0.999999, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 0.999999, 0, 0, 0)
+shape = SubResource("BoxShape3D_bgt32")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
+libraries = {
+"": SubResource("AnimationLibrary_ykoyc")
+}
+
+[node name="Node3D" type="Node3D" parent="Door"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door/Node3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, -7.27891, 0)
+mesh = SubResource("BoxMesh_taosq")
+skeleton = NodePath("")
+
+[node name="Block" parent="." instance=ExtResource("10_7i03l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41511, -0.944853, 18.1016)
+
+[node name="BlockDispenser" parent="." instance=ExtResource("5_jjjul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37638, -1.49564, 9.45979)
+
+[node name="InvisWallborder" type="StaticBody3D" parent="."]
+transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0.245545, 16.969, 11.2717, 14.0562)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisWallborder"]
+transform = Transform3D(0.981403, 0, -0.191973, 0, 1, 0, 0.191973, 0, 0.981403, 16.2807, -6.14099, -9.46269)
+shape = SubResource("BoxShape3D_7md3l")
+metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.950759, 0, -0.30993, 0, 1, 0, 0.30993, 0, 0.950759, 3.08841, -11.21, -4.81708)
+
+[node name="TerrainWall11" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-1.26676, -0.0458184, -0.568473, 0.00453776, 1.76151, -0.181991, 0.401576, -0.164436, -1.79117, -7.82703, 11.6734, 26.9491)
+
+[node name="TerrainWall2" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.160411, -0.256879, 2.20421, 1.22069, 3.97575, 5.85007e-09, -1.73345, 2.77592, 0.203974, 13.2207, 31.2563, -19.2688)
+
+[node name="TerrainWall22" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-2.00264, -0.057788, 1.66217, -0.205638, 3.28826, -0.127959, -1.89243, -0.296159, -1.74507, -3.68957, 21.6166, 39.318)
+
+[node name="TerrainWall24" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-0.299491, 0.130042, 2.37395, -0.136303, 2.00725, -0.17671, -2.1606, -0.144654, -0.317918, -5.65695, 26.6589, -8.44482)
+
+[node name="TerrainWall25" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-2.66807, 0.184611, 3.33842, 0.011882, 2.84952, -0.50385, -2.23368, -0.205354, -3.99033, -43.9038, 34.9747, 7.2787)
+
+[node name="TerrainWall30" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-1.4226, 0.175558, 4.75943, -0.213213, 2.84469, -0.493586, -3.16842, -0.270251, -2.10374, -44.6042, 38.4473, 30.4262)
+
+[node name="TerrainWall35" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(-2.13949, 0.835075, -0.141868, 0.43798, 4.11888, -0.118186, 0.0849509, -0.204235, -2.96357, 2.25574, 30.6895, 54.2259)
+
+[node name="TerrainWall38" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(1.07727, -0.0397712, -0.569731, 0.0494584, 1.0465, 0.0087078, 0.414818, -0.0214887, 1.47853, -11.8245, 19.2397, 22.4914)
+
+[node name="TerrainWall40" parent="Node3D" instance=ExtResource("3_li3rg")]
+transform = Transform3D(0.897556, -0.129495, -1.10136, 0.0757397, 1.07241, -0.174495, 0.887629, 0.0394389, 1.12857, -8.50054, 19.0853, 8.53278)
+
+[node name="SlantedGround3" parent="Node3D" instance=ExtResource("4_mcvys")]
+transform = Transform3D(-0.722364, 0, 0.0668463, 0, 0.72545, 0, -0.0668463, 0, -0.722364, -14.6278, 29.0638, 12.7172)
+
+[node name="Portal" parent="Node3D" instance=ExtResource("10_yeqbr")]
+transform = Transform3D(0.0921446, 0, 0.995746, 0, 1, 0, -0.995746, 0, 0.0921446, -13.6323, 28.9673, 13.9476)
+
+[node name="DoorUnlocker" parent="." instance=ExtResource("9_250qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54099, 12.4009, 25.3211)
+
+[node name="Door2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8634, 17.7641, 6.55825)
+collision_layer = 7
+collision_mask = 7
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2"]
+shape = SubResource("BoxShape3D_wghjl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
+libraries = {
+"": SubResource("AnimationLibrary_yobd1")
+}
+
+[node name="Node3D" type="Node3D" parent="Door2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door2/Node3D"]
+transform = Transform3D(0.472736, 0, -11.7517, 0, 10.0542, 0, 0.233148, 0, 23.8279, 0, 4.71114, 0)
+mesh = SubResource("BoxMesh_0u1ij")
+skeleton = NodePath("")

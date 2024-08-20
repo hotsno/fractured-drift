@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://yglc4yaqjlwb"]
+[gd_scene load_steps=31 format=3 uid="uid://yglc4yaqjlwb"]
 
 [ext_resource type="Environment" uid="uid://vbbwxjy4n6sj" path="res://Assets/Environments/level_5.tres" id="1_jhgq1"]
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="2_1mdp2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d26kr6ljdc6tv" path="res://Assets/Model Scenes/square_terrain_floor_1.tscn" id="8_euy5u"]
 [ext_resource type="PackedScene" uid="uid://cgswa65021rmf" path="res://Common/DoorUnlockerButton/door_unlocker.tscn" id="9_gkoq4"]
 [ext_resource type="PackedScene" uid="uid://bqyyjsl2ydn20" path="res://Assets/Model Scenes/portal.tscn" id="9_m3s1s"]
+[ext_resource type="PackedScene" uid="uid://2gxl55x4nuh6" path="res://Levels/Level6/level_6.tscn" id="11_0qw2k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eulps"]
 size = Vector3(20.46, 0.14, 7.53)
@@ -366,6 +367,7 @@ door_to_be_unlocked_path = NodePath("../Door")
 
 [node name="Portal" parent="." instance=ExtResource("9_m3s1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2958, 7.48436, -70.8077)
+next_level = ExtResource("11_0qw2k")
 
 [node name="Door" type="RigidBody3D" parent="."]
 transform = Transform3D(0.136096, 0, 0.990696, 0, 1, 0, -0.990696, 0, 0.136096, 17.5375, 12.2826, -59.3306)
