@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://btncy63q2qbn1" path="res://Levels/Level2/level_2.tscn" id="6_wen7k"]
 [ext_resource type="PackedScene" uid="uid://dptxxfq5t8517" path="res://Common/BlockDispenser/block_dispenser.tscn" id="7_055dj"]
 [ext_resource type="PackedScene" uid="uid://qeowltyndhjd" path="res://Common/Lava/lava.tscn" id="7_cmiqr"]
-[ext_resource type="FontFile" uid="uid://dde0lnu42jvqa" path="res://Assets/Fonts/HYWenHei-85W.ttf" id="9_6mmie"]
+[ext_resource type="FontFile" uid="uid://cpq5of1d71n3j" path="res://Assets/Fonts/Poppins-Bold.ttf" id="10_7uey1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dpf6"]
 size = Vector3(0.147461, 7.52777, 5.78223)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vuo31"]
-font = ExtResource("9_6mmie")
+font = ExtResource("10_7uey1")
 font_size = 40
 
 [node name="Level1" type="Node3D"]
