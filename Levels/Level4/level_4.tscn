@@ -14,6 +14,33 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
 size = Vector3(1, 10.506, 11.6245)
 
+[sub_resource type="Animation" id="Animation_xlkhk"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_fryip"]
 resource_name = "Open"
 tracks/0/type = "value"
@@ -65,33 +92,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xlkhk"]
-resource_name = "Close"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ykoyc"]
@@ -256,7 +256,7 @@ mix_block_size = 0.1
 transform = Transform3D(0.207605, 0, -0.086252, 0, 0.22481, 0, 0.086252, 0, 0.207605, 7.34166, 7.14283, -12.085)
 
 [node name="SquareTerrainFloor3" parent="." instance=ExtResource("8_euy5u")]
-transform = Transform3D(0.207605, 0, -0.086252, 0, 0.22481, 0, 0.086252, 0, 0.207605, 16.2603, 7.14283, -41.2031)
+transform = Transform3D(0.207605, 0, -0.086252, 0, 0.22481, 0, 0.086252, 0, 0.207605, 16.1054, 7.14283, -46.3095)
 
 [node name="SquareTerrainFloor4" parent="." instance=ExtResource("8_euy5u")]
 transform = Transform3D(0.207605, 0, -0.086252, 0, 0.22481, 0, 0.086252, 0, 0.207605, 28.2106, 7.14283, -41.919)
