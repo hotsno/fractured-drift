@@ -22,7 +22,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name == "Player" or body.is_in_group("ResizeableObjects"):
 		red_button.position = button_up_pos - Vector3(0, button_pushdown_amount, 0)
 		var animation: AnimationPlayer = door_to_be_unlocked.get_node("AnimationPlayer")

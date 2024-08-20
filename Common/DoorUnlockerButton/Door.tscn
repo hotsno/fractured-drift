@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgy60xgkdymqh"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
-size = Vector3(1, 10.506, 11.6245)
+[sub_resource type="BoxShape3D" id="BoxShape3D_03mkb"]
+size = Vector3(1, 10.506, 15.8879)
 
-[sub_resource type="Animation" id="Animation_xlkhk"]
+[sub_resource type="Animation" id="Animation_6j8og"]
 resource_name = "Close"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "values": [Vector3(0, 10, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fryip"]
+[sub_resource type="Animation" id="Animation_chshr"]
 resource_name = "Open"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_lyskx"]
+[sub_resource type="Animation" id="Animation_xcanm"]
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,18 +83,18 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 10, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykoyc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rhtd4"]
 _data = {
-"Close": SubResource("Animation_xlkhk"),
-"Open": SubResource("Animation_fryip"),
-"RESET": SubResource("Animation_lyskx")
+"Close": SubResource("Animation_6j8og"),
+"Open": SubResource("Animation_chshr"),
+"RESET": SubResource("Animation_xcanm")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3t85"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgaiy"]
 albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_taosq"]
-material = SubResource("StandardMaterial3D_g3t85")
+[sub_resource type="BoxMesh" id="BoxMesh_lvwpj"]
+material = SubResource("StandardMaterial3D_tgaiy")
 
 [node name="Door" type="RigidBody3D"]
 collision_layer = 7
@@ -107,16 +107,16 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_bgt32")
+shape = SubResource("BoxShape3D_03mkb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ykoyc")
+"": SubResource("AnimationLibrary_rhtd4")
 }
 
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(0.321936, 0, 0, 0, 10.0542, 0, 0, 0, 11.5908, 0, 0, 0)
-mesh = SubResource("BoxMesh_taosq")
+mesh = SubResource("BoxMesh_lvwpj")
 skeleton = NodePath("")
