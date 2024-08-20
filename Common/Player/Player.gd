@@ -120,6 +120,7 @@ func _run_resize_object_logic():
 				mesh.scale *= 0.9
 				collision.scale *= 0.9
 
+				# MAYBE PROBLEM HERE @MIYAZUKi
 				$Head/Camera3D/RayCast3D.scale *= 0.9
 
 
