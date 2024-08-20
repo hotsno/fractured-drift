@@ -110,6 +110,7 @@ func _run_resize_object_logic():
 				mesh.scale *= 1.1
 				collision.scale *= 1.1
 
+				# MAYBE PROBLEM HERE @MIYAZUKi
 				$Head/Camera3D/RayCast3D.scale *= 1.1
 
 		if Input.is_action_pressed("scroll_wheel_down"):
@@ -134,10 +135,13 @@ func _run_pickup_object_logic():
 
 		var floor_raycast_collider = floor_raycast.get_collider()
 
+		# MAYBE ADD ANGLE LOCK CODE HERE
+
 		if not floor_raycast_collider:
 			picked_object.set_linear_velocity((b - a) * pull_power)
 
 		else:
+			# BLOCK HOVERING ABOVE FLOOR
 			var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
 			picked_object.set_linear_velocity((floor_raycast.get_collision_point() - a
 			+ Vector3(0, 2 + mesh.get_aabb().get_longest_axis_size(), 0)) * pull_power)
