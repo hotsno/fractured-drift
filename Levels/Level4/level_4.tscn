@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://wlphe20057tu" path="res://Assets/Model Scenes/flat_ground.tscn" id="10_gxjey"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgt32"]
-size = Vector3(1, 9.79541, 34.0951)
+size = Vector3(1, 10.9036, 34.0951)
 
 [sub_resource type="Animation" id="Animation_xlkhk"]
 resource_name = "Close"

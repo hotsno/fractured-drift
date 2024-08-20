@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://dptxxfq5t8517"]
+[gd_scene load_steps=21 format=3 uid="uid://dptxxfq5t8517"]
 
 [ext_resource type="Script" path="res://Common/BlockDispenser/block_dispenser.gd" id="1_f0dh5"]
 [ext_resource type="PackedScene" uid="uid://dk811qarbst5q" path="res://Common/PressurePlate/pressure_plate.tscn" id="2_cysk1"]
 [ext_resource type="AudioStream" uid="uid://bycoeh2wwmtb2" path="res://Assets/Audio/Sound Effects/Jump4.wav" id="3_heuw4"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_bry8d"]
+[sub_resource type="QuadMesh" id="QuadMesh_i4er7"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_kb86n"]
-mesh = SubResource("QuadMesh_bry8d")
+mesh = SubResource("QuadMesh_i4er7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qm1h"]
 transparency = 1
@@ -17,22 +17,22 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.917647, 0.623529, 0.6, 1)
 albedo_texture = SubResource("MeshTexture_kb86n")
 
-[sub_resource type="Curve" id="Curve_kyy0s"]
+[sub_resource type="Curve" id="Curve_rj8m7"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_5ypjq"]
+[sub_resource type="Curve" id="Curve_3emh7"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_wkx4t"]
+[sub_resource type="Curve" id="Curve_pyfhi"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_6hrpq"]
-curve_x = SubResource("Curve_kyy0s")
-curve_y = SubResource("Curve_5ypjq")
-curve_z = SubResource("Curve_wkx4t")
+curve_x = SubResource("Curve_rj8m7")
+curve_y = SubResource("Curve_3emh7")
+curve_z = SubResource("Curve_pyfhi")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kwvqc"]
 particle_flag_align_y = true
@@ -51,6 +51,11 @@ hue_variation_max = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_i7cv6"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_bry8d"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_3vlqi"]
+mesh = SubResource("QuadMesh_bry8d")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elp22"]
 transparency = 1
 blend_mode = 1
@@ -58,7 +63,24 @@ cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.917647, 0.623529, 0.6, 1)
-albedo_texture = SubResource("MeshTexture_kb86n")
+albedo_texture = SubResource("MeshTexture_3vlqi")
+
+[sub_resource type="Curve" id="Curve_kyy0s"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5ypjq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wkx4t"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ru0xm"]
+curve_x = SubResource("Curve_kyy0s")
+curve_y = SubResource("Curve_5ypjq")
+curve_z = SubResource("Curve_wkx4t")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_diaai"]
 particle_flag_align_y = true
@@ -71,7 +93,7 @@ initial_velocity_max = 3.0
 gravity = Vector3(0, 4, 0)
 scale_min = 0.05
 scale_max = 0.5
-scale_curve = SubResource("CurveXYZTexture_6hrpq")
+scale_curve = SubResource("CurveXYZTexture_ru0xm")
 hue_variation_min = -0.05
 hue_variation_max = 0.05
 
