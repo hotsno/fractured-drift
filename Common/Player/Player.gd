@@ -41,6 +41,7 @@ var ray_scale_down = 0.92593
 var reload_ready = true
 
 @onready var walking_sound: AudioStreamPlayer3D = $WalkingSound
+@onready var pickup_sound: AudioStreamPlayer3D = $PickupSound
 
 var picked_object: RigidBody3D
 var pull_power = 4
@@ -186,6 +187,8 @@ func _pick_object():
 		picked_object.set_collision_mask_value(1, false)
 		picked_object.set_collision_mask_value(2, false)
 		picked_object.set_collision_mask_value(3, false)
+
+		pickup_sound.play()
 
 		_make_selected_object_glow(picked_object)
 
