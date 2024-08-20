@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crrykn5ftqva2"
+path="res://.godot/imported/BlockPlaceSound.wav-18c5dd83011b10c058f7d009ac693fce.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Effects/BlockPlaceSound.wav"
+dest_files=["res://.godot/imported/BlockPlaceSound.wav-18c5dd83011b10c058f7d009ac693fce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

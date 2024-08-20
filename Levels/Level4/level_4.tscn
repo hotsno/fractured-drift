@@ -307,7 +307,7 @@ transform = Transform3D(0.994678, 0, 0.103036, 0, 1, 0, -0.103036, 0, 0.994678, 
 door_to_be_unlocked_path = NodePath("../Door")
 
 [node name="Door" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8822, -0.943642, -8.31412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0308, 6.64376, -8.31412)
 collision_layer = 7
 collision_mask = 7
 axis_lock_linear_x = true
@@ -328,7 +328,7 @@ libraries = {
 [node name="Node3D" type="Node3D" parent="Door"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door/Node3D"]
-transform = Transform3D(0.321936, 0, 0, 0, 13.6936, 0, 0, 0, 32.22, 6.09304, 5.6796, 0)
+transform = Transform3D(0.321936, 0, 0, 0, 13.6936, 0, 0, 0, 32.22, 0, 0, 0)
 mesh = SubResource("BoxMesh_taosq")
 skeleton = NodePath("")
 

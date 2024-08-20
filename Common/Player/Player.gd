@@ -38,6 +38,8 @@ var ray_scale_down = 0.92593
 @onready var object_holding_point: Marker3D = get_node(object_holding_point_path)
 @onready var interact_timer: Timer = get_node(interact_timer_path)
 
+var reload_ready = true
+
 var picked_object: RigidBody3D
 var pull_power = 4
 @export var head_path: NodePath
@@ -45,6 +47,7 @@ var pull_power = 4
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	interact_timer.start()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -98,12 +101,15 @@ func _on_coin_coin_collected():
 	speed_multiplier = 1.0
 
 func _input(_event):
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") and reload_ready:
 		if not picked_object:
 			_pick_object()
-			interact_timer.start()
-		elif picked_object and is_instance_valid(picked_object):# and interact_timer.timeout:
+			reload_ready = false
+		elif picked_object and is_instance_valid(picked_object):
 			_drop_object()
+
+	if Input.is_action_just_released("left_click"):
+		reload_ready = true
 
 	_run_resize_object_logic()
 
@@ -152,7 +158,6 @@ func _run_pickup_object_logic():
 		else:
 			# BLOCK HOVERING ABOVE FLOOR
 			var mesh: MeshInstance3D = picked_object.get_node("MeshInstance3D")
-			print( mesh.scale.y / 1.5)
 			picked_object.set_linear_velocity((floor_raycast.get_collision_point() - a
 			+ Vector3(0, mesh.scale.y / 2, 0)) * pull_power)
 
@@ -185,6 +190,9 @@ func _drop_object():
 			picked_object.position += Vector3(0, 6, 0)
 
 		#picked_object.set_axis_velocity(Vector3(0, 0, 0))
+
+		var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
+		audio.play()
 
 		object_dropped.emit()
 		clicked_on_selecatable_object.emit(picked_object)
