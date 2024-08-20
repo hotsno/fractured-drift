@@ -105,7 +105,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_heuw4")
-volume_db = -10.685
+volume_db = 7.836
 pitch_scale = 0.35
 
 [node name="CloudParticles" type="GPUParticles3D" parent="."]
