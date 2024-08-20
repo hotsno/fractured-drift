@@ -172,7 +172,7 @@ albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 material = SubResource("StandardMaterial3D_g3t85")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03mkb"]
-size = Vector3(1, 10.506, 17.5523)
+size = Vector3(0.331055, 12.704, 15.7922)
 
 [sub_resource type="Animation" id="Animation_6j8og"]
 resource_name = "Close"
@@ -389,7 +389,7 @@ transform = Transform3D(0.136105, 0, -0.0565466, 0, 0.147385, 0, 0.0565466, 0, 0
 transform = Transform3D(0.0976586, 0, -0.198846, 0, 0.221534, 0, 0.198846, 0, 0.0976586, -4.48001, 15.4761, 12.7856)
 
 [node name="RigidBody3D" parent="." instance=ExtResource("9_250qf")]
-transform = Transform3D(0.987383, 0, -0.158348, 0, 1, 0, 0.158348, 0, 0.987383, 4.50242, -0.40736, 25.2661)
+transform = Transform3D(0.987383, 0, -0.158348, 0.0296715, 0.982287, 0.185017, 0.155543, -0.187381, 0.969894, 4.23088, -0.761421, 25.2661)
 door_to_be_unlocked_path = NodePath("../Door")
 
 [node name="Block" type="RigidBody3D" parent="." groups=["ResizeableObjects"]]
@@ -511,6 +511,6 @@ libraries = {
 [node name="Node3D" type="Node3D" parent="Door"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door/Node3D"]
-transform = Transform3D(0.319998, 0, 0, 0, 10.0542, 0, 0, 0, 18.275, 0, 0, 0)
+transform = Transform3D(0.32003, 0, 2.98023e-08, 0, 19.096, 0, -2.56114e-09, 0, 17.8707, -0.00571823, 4.77322, 0.547873)
 mesh = SubResource("BoxMesh_lvwpj")
 skeleton = NodePath("")
