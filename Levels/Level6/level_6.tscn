@@ -73,7 +73,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mgkys")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7md3l"]
-size = Vector3(0.147461, 86.8611, 148.779)
+size = Vector3(23.3099, 86.8611, 75.9907)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wghjl"]
 size = Vector3(1, 10.3252, 23.5043)
@@ -374,10 +374,10 @@ transform = Transform3D(0.236787, 0, -0.0983762, 0, 0.256411, 0, 0.0983762, 0, 0
 transform = Transform3D(0.0939832, 0, -0.155927, 0, 0.182062, 0, 0.155927, 0, 0.0939832, 15.6186, 5.27982, 11.3194)
 
 [node name="SquareTerrainFloor6" parent="." instance=ExtResource("8_ol8ak")]
-transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0.245545, 9.44238, 11.2717, 20.0074)
+transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0.245545, 8.51275, 11.2717, 20.0074)
 
 [node name="SquareTerrainFloor7" parent="." instance=ExtResource("8_ol8ak")]
-transform = Transform3D(0.236787, 0, -0.0983762, 0, 0.256411, 0, 0.0983762, 0, 0.236787, 12.589, 7.62534, 15.4575)
+transform = Transform3D(0.236787, 0, -0.0983762, 0, 0.256411, 0, 0.0983762, 0, 0.236787, 11.4927, 7.62534, 15.1889)
 
 [node name="SquareTerrainFloor8" parent="." instance=ExtResource("8_ol8ak")]
 transform = Transform3D(0.168666, 0, -0.0700746, 0, 0.182645, 0, 0.0700746, 0, 0.168666, 6.10128, 10.2698, 12.4945)
@@ -418,7 +418,16 @@ transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisWallborder"]
-transform = Transform3D(0.981403, 0, -0.191973, 0, 1, 0, 0.191973, 0, 0.981403, 16.2807, -6.14099, -9.46269)
+transform = Transform3D(0.981403, 0, -0.191973, 0, 1, 0, 0.191973, 0, 0.981403, 17.1926, -6.14099, -5.43561)
+shape = SubResource("BoxShape3D_7md3l")
+metadata/_edit_lock_ = true
+
+[node name="InvisWallborder2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.245545, 0, -0.0738495, 0, 0.256411, 0, 0.0738495, 0, 0.245545, 16.969, 11.2717, 14.0562)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisWallborder2"]
+transform = Transform3D(0.981403, 0, -0.191973, 0, 1, 0, 0.191973, 0, 0.981403, 1.03123, -6.14099, 45.4939)
 shape = SubResource("BoxShape3D_7md3l")
 metadata/_edit_lock_ = true
 
