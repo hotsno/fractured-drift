@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drkbyftyse3xy"]
+[gd_scene load_steps=11 format=3 uid="uid://drkbyftyse3xy"]
 
 [ext_resource type="Script" path="res://Common/Player/Player.gd" id="1_0cuco"]
 [ext_resource type="PackedScene" uid="uid://dmpf1ksqe41gs" path="res://Common/Tools/wand.tscn" id="2_uydla"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dnj8tthmj14mg" path="res://Common/UI/Crosshair/crosshair.tscn" id="5_wslm0"]
 [ext_resource type="AudioStream" uid="uid://cnaro0hhvgpds" path="res://Assets/Audio/Sound Effects/PlayWalkSound.wav" id="6_v2s46"]
 [ext_resource type="AudioStream" uid="uid://mhm7j77i6kh6" path="res://Assets/Audio/Sound Effects/PickupSound.wav" id="7_ov4kd"]
+[ext_resource type="AudioStream" uid="uid://cdc6bamx33n0a" path="res://Assets/Audio/BackgroundMusic.wav" id="7_q3qia"]
+[ext_resource type="AudioStream" uid="uid://bftnyegx0mlvt" path="res://Assets/Audio/Sound Effects/PlayerJump.wav" id="8_oxhsc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yaqnn"]
 
@@ -83,5 +85,13 @@ pitch_scale = 0.83
 stream = ExtResource("7_ov4kd")
 volume_db = 9.143
 pitch_scale = 0.52
+
+[node name="BackgroundMusic" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_q3qia")
+volume_db = -8.767
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_oxhsc")
+pitch_scale = 2.89
 
 [connection signal="clicked_on_selecatable_object" from="." to="Head/Camera3D/Wand" method="_on_player_clicked_on_selecatable_object"]

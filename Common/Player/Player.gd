@@ -42,6 +42,7 @@ var reload_ready = true
 
 @onready var walking_sound: AudioStreamPlayer3D = $WalkingSound
 @onready var pickup_sound: AudioStreamPlayer3D = $PickupSound
+@onready var background_music: AudioStreamPlayer3D = $BackgroundMusic
 
 var picked_object: RigidBody3D
 var pull_power = 4
@@ -51,6 +52,7 @@ var pull_power = 4
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	interact_timer.start()
+	background_music.play()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -89,6 +91,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		walking_sound.stop()
 
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
