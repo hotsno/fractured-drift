@@ -55,6 +55,8 @@ func _unhandled_input(event):
 		var x_offset = -event.relative.y * SENSITIVITY
 		var x_rotation = clamp(camera.rotation.x + x_offset, deg_to_rad(-80), deg_to_rad(80))
 		camera.rotation.x = x_rotation
+	if event.is_action_pressed("restart"):
+		get_tree().call_deferred("reload_current_scene")
 
 func _physics_process(delta):
 	if not is_on_floor():
